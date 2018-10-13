@@ -12,4 +12,8 @@
           class="com.luv2code.springdemo.BaseballCoach">
     </bean>
 
+    <bean id="footballCoach"
+          class="com.luv2code.springdemo.FootballCoach">
+    </bean>
+
 </beans>

@@ -20,28 +20,28 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="5" />
+          <entry key="java" value="6" />
           <entry key="json" value="1" />
           <entry key="xml" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="5" />
+          <entry key="JAVA" value="6" />
           <entry key="JSON" value="1" />
           <entry key="XML" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="441" />
-          <entry key="xml" value="70" />
+          <entry key="java" value="552" />
+          <entry key="xml" value="130" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="441" />
-          <entry key="XML" value="70" />
+          <entry key="JAVA" value="552" />
+          <entry key="XML" value="130" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.spring.core.usages.trigger">
@@ -69,8 +69,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/com/luv2code/springdemo/Coach.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" />
+            <state relative-caret-position="34">
+              <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/com/luv2code/springdemo/FootballCoach.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+              <folding>
+                <element signature="e#130#131#0" expanded="true" />
+                <element signature="e#157#158#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -87,8 +100,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/applicationContext.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="255">
+              <caret line="15" column="56" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -96,8 +109,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/com/luv2code/springdemo/SpringHelloApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+            <state relative-caret-position="289">
+              <caret line="19" column="58" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -135,6 +148,7 @@
         <option value="$PROJECT_DIR$/com/luv2code/springdemo/BaseballCoach.java" />
         <option value="$PROJECT_DIR$/com/luv2code/springdemo/MyApp.java" />
         <option value="$PROJECT_DIR$/com/luv2code/springdemo/TrackCoach.java" />
+        <option value="$PROJECT_DIR$/com/luv2code/springdemo/FootballCoach.java" />
         <option value="$PROJECT_DIR$/applicationContext.xml" />
         <option value="$PROJECT_DIR$/com/luv2code/springdemo/SpringHelloApp.java" />
       </list>
@@ -191,7 +205,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539433226869" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539433976726" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -309,15 +323,16 @@
       <option name="presentableId" value="Default" />
       <updated>1539420631800</updated>
       <workItem from="1539420638354" duration="1182000" />
-      <workItem from="1539425824809" duration="4661000" />
+      <workItem from="1539425824809" duration="5520000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5843000" />
+    <option name="totallyTimeSpent" value="6702000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25340393" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -365,17 +380,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/luv2code/springdemo/TrackCoach.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
-          <folding>
-            <element signature="e#128#129#0" expanded="true" />
-            <element signature="e#155#156#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/artifacts/unnamed.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -390,20 +394,6 @@
     <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com/luv2code/springdemo/Coach.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/com/luv2code/springdemo/BaseballCoach.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -415,6 +405,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/com/luv2code/springdemo/TrackCoach.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+          <folding>
+            <element signature="e#128#129#0" expanded="true" />
+            <element signature="e#155#156#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/com/luv2code/springdemo/MyApp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -422,10 +423,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/com/luv2code/springdemo/Coach.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/luv2code/springdemo/FootballCoach.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+          <folding>
+            <element signature="e#130#131#0" expanded="true" />
+            <element signature="e#157#158#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="56" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/com/luv2code/springdemo/SpringHelloApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+        <state relative-caret-position="289">
+          <caret line="19" column="58" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
         </state>
       </provider>
     </entry>
