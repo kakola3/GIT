@@ -19,6 +19,10 @@ public class SpringHelloApp {
         System.out.println(yourCoach.getDailyWorkout());
         System.out.println(herCoach.getDailyWorkout());
 
+        // let's call our new method for fortunes
+        System.out.println(theCoach.getFortune());
+        System.out.println(herCoach.getFortune());
+
         // close the context
         context.close();
     }
