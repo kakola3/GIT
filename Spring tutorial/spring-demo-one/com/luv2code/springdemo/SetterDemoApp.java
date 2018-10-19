@@ -18,6 +18,10 @@ public class SetterDemoApp
         System.out.println(cricketCoach.getEmailAddress());
         System.out.println(cricketCoach.getTeam());
 
+        // practise activity 2 - retreive bean from spring container
+        VolleyBallCoach volleyBallCoach = context.getBean("VolleyBallCoach", VolleyBallCoach.class);
+        System.out.println(volleyBallCoach.getDailyFortune());
+
 
         // close the context
         context.close();

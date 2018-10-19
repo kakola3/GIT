@@ -12,6 +12,10 @@
         class="com.luv2code.springdemo.HappyFortuneService">
     </bean>
 
+    <bean id="practice2Fortune"
+          class="com.luv2code.springdemo.NewFortuneService">
+    </bean>
+
     <!-- Define your beans here -->
     <bean id="myCoach"
         class="com.luv2code.springdemo.BaseballCoach">
@@ -36,5 +40,10 @@
         <!-- inject literal(dosłowne) values -->
         <property name="emailAddress" value="${foo.email}"/>
         <property name="team" value="${foo.team}"/>
+    </bean>
+
+    <bean id="VolleyBallCoach"
+          class="com.luv2code.springdemo.VolleyBallCoach">
+        <property name="fortuneService" ref="practice2Fortune"/>
     </bean>
 </beans>
