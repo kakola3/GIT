@@ -7,7 +7,7 @@ public class FootballCoach implements Coach {
     }
 
     @Override
-    public String getFortune() {
+    public String getDailyFortune() {
         return null;
     }
 }

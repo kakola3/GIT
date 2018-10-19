@@ -18,7 +18,7 @@ public class TrackCoach implements Coach {
     }
 
     @Override
-    public String getFortune() {
+    public String getDailyFortune() {
         return "TrackCoach is your lucky day!";
     }
 }
