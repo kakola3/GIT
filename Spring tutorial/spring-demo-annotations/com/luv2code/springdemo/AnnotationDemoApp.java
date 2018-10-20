@@ -17,6 +17,10 @@ public class AnnotationDemoApp
         // Practice activity 4 - call method on a bean
         System.out.println(handCoach.getDailyWorkout());
 
+
+        // call method to get the daily fortune
+        System.out.println(theCoach.getDailyFortune());
+
         // close the context
         context.close();
     }

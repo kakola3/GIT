@@ -9,4 +9,9 @@ public class HandBallCoach implements Coach
     public String getDailyWorkout() {
         return "Throw 10 times";
     }
+
+    @Override
+    public String getDailyFortune() {
+        return null;
+    }
 }
