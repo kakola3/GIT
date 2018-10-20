@@ -13,6 +13,14 @@ public class BeanLifeCycleDemoApp
 
         // print out the results
         System.out.println(theCoach.getDailyWorkout());
+
+
+        // practice activity 3 - retrieve bean from spring container
+        Coach volleyBallCoach = context.getBean("volleyBallCoach", Coach.class);
+        // practice activity 3 - print out the results
+        System.out.println(volleyBallCoach.getDailyFortune());
+
+
         // close the context
         context.close();
     }
