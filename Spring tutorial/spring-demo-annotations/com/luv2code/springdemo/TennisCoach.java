@@ -8,21 +8,24 @@ import org.springframework.stereotype.Component;
 public class TennisCoach implements Coach
 {
     @Autowired
-    @Qualifier("randomFortuneService")
+    @Qualifier("dataBaseFortuneService")
     private FortuneService fortuneService;
 
     // define a default constructor
+
     public TennisCoach(){
         System.out.println(">> TennisCoach: inside default constructor");
     }
+
+    // define a setter method
 //    @Autowired
-//    public TennisCoach(FortuneService fortuneService){
+//    public void doSomeCrazyStuff(FortuneService fortuneService){
+//        System.out.println(">> TennisCoach: inside doSomeCrazyStuff() method");
 //        this.fortuneService = fortuneService;
 //    }
 
 //    @Autowired
-//    public void doSomeCrazyStuff(FortuneService fortuneService){
-//        System.out.println(">> TennisCoach: inside doSomeCrazyStuff() method");
+//    public TennisCoach(FortuneService fortuneService){
 //        this.fortuneService = fortuneService;
 //    }
 

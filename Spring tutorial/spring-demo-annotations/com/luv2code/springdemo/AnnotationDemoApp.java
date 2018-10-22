@@ -13,10 +13,9 @@ public class AnnotationDemoApp
         System.out.println(theCoach.getDailyWorkout());
 
         // Practice activity 4 - get the bean from spring container
-        Coach handCoach = context.getBean("handCoach", Coach.class);
+        //Coach handCoach = context.getBean("handCoach", Coach.class);
         // Practice activity 4 - call method on a bean
-        System.out.println(handCoach.getDailyWorkout());
-
+        //System.out.println(handCoach.getDailyWorkout());
 
         // call method to get the daily fortune
         System.out.println(theCoach.getDailyFortune());

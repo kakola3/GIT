@@ -4,13 +4,12 @@ import org.springframework.stereotype.Component;
 
 import java.util.Random;
 
-@Component
+//@Component
 public class RandomFortuneService implements FortuneService
 {
-
     // create an array of strings
-    private String[] data={
-      "Beware of the wolf in sheep's clothing",
+    private String[] data = {
+            "Beware of the wolf in sheep's clothing",
             "Diligence is the mother of good luck",
             "The journey is the reward"
     };
@@ -22,6 +21,7 @@ public class RandomFortuneService implements FortuneService
     public String getFortune() {
         // pick a random string from the array
         int index = myRandom.nextInt(data.length);
+
         String theFortune = data[index];
 
         return theFortune;
