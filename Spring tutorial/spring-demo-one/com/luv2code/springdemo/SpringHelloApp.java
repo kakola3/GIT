@@ -20,8 +20,8 @@ public class SpringHelloApp {
         System.out.println(herCoach.getDailyWorkout());
 
         // let's call our new method for fortunes
-        System.out.println(theCoach.getFortune());
-        System.out.println(herCoach.getFortune());
+        System.out.println(theCoach.getDailyFortune());
+        System.out.println(herCoach.getDailyFortune());
 
         // close the context
         context.close();
