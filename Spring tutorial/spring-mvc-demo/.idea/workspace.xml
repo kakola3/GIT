@@ -14,6 +14,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
     <option name="GROUP_DATA_SOURCES" value="true" />
@@ -32,50 +35,57 @@
     <session id="-1061541262">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="12" />
+          <entry key="project.closed" value="17" />
           <entry key="project.open.time.12" value="2" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="1" />
-          <entry key="project.open.time.17" value="2" />
-          <entry key="project.open.time.18" value="3" />
-          <entry key="project.open.time.20" value="1" />
+          <entry key="project.open.time.16" value="2" />
+          <entry key="project.open.time.17" value="3" />
+          <entry key="project.open.time.18" value="4" />
+          <entry key="project.open.time.20" value="2" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.opened" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="class" value="2" />
           <entry key="css" value="2" />
-          <entry key="iml" value="12" />
-          <entry key="java" value="10" />
+          <entry key="iml" value="18" />
+          <entry key="java" value="37" />
           <entry key="js" value="2" />
-          <entry key="jsp" value="13" />
-          <entry key="xml" value="11" />
+          <entry key="jsp" value="18" />
+          <entry key="properties" value="2" />
+          <entry key="xml" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="CLASS" value="2" />
           <entry key="CSS" value="2" />
-          <entry key="IDEA_MODULE" value="12" />
-          <entry key="JAVA" value="10" />
-          <entry key="JSP" value="13" />
+          <entry key="IDEA_MODULE" value="18" />
+          <entry key="JAVA" value="37" />
+          <entry key="JSP" value="18" />
           <entry key="JavaScript" value="2" />
-          <entry key="XML" value="11" />
+          <entry key="Properties" value="2" />
+          <entry key="XML" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1825" />
-          <entry key="jsp" value="1378" />
-          <entry key="xml" value="68" />
+          <entry key="java" value="3732" />
+          <entry key="jsp" value="2059" />
+          <entry key="properties" value="49" />
+          <entry key="xml" value="182" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1825" />
-          <entry key="JSP" value="1378" />
-          <entry key="XML" value="68" />
+          <entry key="JAVA" value="3732" />
+          <entry key="JSP" value="2059" />
+          <entry key="Properties" value="49" />
+          <entry key="XML" value="182" />
         </counts>
       </usages-collector>
     </session>
@@ -83,28 +93,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/luv2code/springdemo/mvc/HomeController.java">
+        <entry file="file://$PROJECT_DIR$/src/com/luv2code/springdemo/mvc/CustomerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/helloworld-form.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/luv2code/springdemo/mvc/SillyController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state relative-caret-position="228">
+              <caret line="56" column="28" lean-forward="true" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -113,38 +105,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/helloworld.jsp">
+        <entry file="file://$PROJECT_DIR$/src/com/luv2code/springdemo/mvc/com/luv2code/springdemo/mvc/validation/CourseCode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/luv2code/springdemo/mvc/Student.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="806">
-              <caret line="64" selection-start-line="64" selection-end-line="64" />
-              <folding>
-                <element signature="e#1273#1274#0" expanded="true" />
-                <element signature="e#1313#1314#0" expanded="true" />
-                <element signature="e#1379#1380#0" expanded="true" />
-                <element signature="e#1437#1438#0" expanded="true" />
-                <element signature="e#1513#1514#0" expanded="true" />
-                <element signature="e#1552#1553#0" expanded="true" />
-                <element signature="e#1618#1619#0" expanded="true" />
-                <element signature="e#1674#1675#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/luv2code/springdemo/mvc/StudentController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+            <state relative-caret-position="126">
+              <caret line="9" column="55" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -153,28 +117,67 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/main-menu.jsp">
+        <entry file="file://$PROJECT_DIR$/src/com/luv2code/springdemo/mvc/com/luv2code/springdemo/mvc/validation/CourseCodeConstraintValidator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="35" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="35" />
+            <state relative-caret-position="109">
+              <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#376#377#0" expanded="true" />
+                <element signature="e#419#420#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/customer-confirmation.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="279">
+              <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/student-confirmation.jsp">
+        <entry file="file://$PROJECT_DIR$/src/com/luv2code/springdemo/mvc/Customer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+            <state relative-caret-position="211">
+              <caret line="26" column="7" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1304#1305#0" expanded="true" />
+                <element signature="e#1337#1338#0" expanded="true" />
+                <element signature="e#1389#1390#0" expanded="true" />
+                <element signature="e#1433#1434#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/student-form.jsp">
+        <entry file="file://$PROJECT_DIR$/src/resources/messages.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="34" column="4" lean-forward="true" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
+            <state>
+              <caret column="47" selection-start-column="47" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/customer-form.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/student-confirmation.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -185,6 +188,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="spring-beans.schema" />
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -199,15 +203,22 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/view/helloworld.jsp" />
         <option value="$PROJECT_DIR$/web/resources/css/my-test.css" />
         <option value="$PROJECT_DIR$/web/resources/js/simple-test.js" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/spring-mvc-demo-servlet.xml" />
         <option value="$PROJECT_DIR$/web/WEB-INF/view/helloworld-form.jsp" />
         <option value="$PROJECT_DIR$/src/com/luv2code/springdemo/mvc/SillyController.java" />
         <option value="$PROJECT_DIR$/src/com/luv2code/springdemo/mvc/HelloWorldController.java" />
         <option value="$PROJECT_DIR$/src/com/luv2code/springdemo/mvc/StudentController.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/view/main-menu.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/view/student-form.jsp" />
         <option value="$PROJECT_DIR$/src/com/luv2code/springdemo/mvc/Student.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/view/student-confirmation.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/view/main-menu.jsp" />
+        <option value="$PROJECT_DIR$/src/com/luv2code/springdemo/mvc/resources/messages.properties" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/spring-mvc-demo-servlet.xml" />
+        <option value="$PROJECT_DIR$/src/com/luv2code/springdemo/mvc/CustomerController.java" />
+        <option value="$PROJECT_DIR$/src/com/luv2code/springdemo/mvc/com/luv2code/springdemo/mvc/validation/CourseCode.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/view/customer-form.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/view/customer-confirmation.jsp" />
+        <option value="$PROJECT_DIR$/src/com/luv2code/springdemo/mvc/com/luv2code/springdemo/mvc/validation/CourseCodeConstraintValidator.java" />
+        <option value="$PROJECT_DIR$/src/com/luv2code/springdemo/mvc/Customer.java" />
       </list>
     </option>
   </component>
@@ -224,9 +235,15 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1246" />
-    <option name="y" value="250" />
+    <option name="x" value="2037" />
+    <option name="y" value="179" />
     <option name="width" value="1552" />
     <option name="height" value="840" />
   </component>
@@ -238,10 +255,19 @@
           <State>
             <id>Java EE</id>
           </State>
+          <State>
+            <id>Spring</id>
+          </State>
+          <State>
+            <id>Spring CoreSpring</id>
+          </State>
+          <State>
+            <id>XMLSpring CoreSpring</id>
+          </State>
         </expanded-state>
         <selected-state>
           <State>
-            <id>ServletWithoutMappingInspection</id>
+            <id>SpringXmlModelInspection</id>
           </State>
         </selected-state>
       </profile-state>
@@ -252,8 +278,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -275,27 +299,20 @@
             <path>
               <item name="spring-mvc-demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="spring-mvc-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="mvc" type="462c0819:PsiDirectoryNode" />
+              <item name="validation" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="spring-mvc-demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="spring-mvc-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="spring-mvc-demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="spring-mvc-demo" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-mvc-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-mvc-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="spring-mvc-demo" type="b2602c69:ProjectViewProjectNode" />
@@ -318,22 +335,36 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="spring-mvc-demo" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="spring-mvc-demo" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541258232620" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../spring-demo-app" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541362466828" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../hibernate-validator-6.0.13.Final/hibernate-validator-cdi-6.0.13.Final.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kacpe\Desktop\spring-mvc-demo\src\com\luv2code\springdemo\mvc" />
       <recent name="C:\Users\kacpe\Desktop\spring-mvc-demo\web\resources\images" />
       <recent name="C:\Users\kacpe\Desktop\spring-mvc-demo\lib" />
       <recent name="C:\Users\kacpe\Desktop\spring-mvc-demo\web\WEB-INF" />
@@ -419,6 +450,7 @@
       </method>
     </configuration>
     <configuration name="ApplicationServer" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.12" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="spring-mvc-demo:war exploded">
@@ -616,16 +648,21 @@
       <workItem from="1540930503075" duration="933000" />
       <workItem from="1540931570664" duration="2116000" />
       <workItem from="1541255899844" duration="1972000" />
+      <workItem from="1541258693467" duration="9899000" />
+      <workItem from="1541271256851" duration="356000" />
+      <workItem from="1541340272906" duration="8285000" />
+      <workItem from="1541357412610" duration="843000" />
+      <workItem from="1541358519669" duration="3769000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20048000" />
+    <option name="totallyTimeSpent" value="43200000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="180" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49836066" visible="true" weight="0.37291983" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49836066" visible="true" weight="0.2579425" />
       <window_info id="Structure" order="1" sideWeight="0.50163937" side_tool="true" weight="0.2980333" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -645,7 +682,7 @@
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Inspection Results" order="10" weight="0.32907802" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3295082" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" />
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="15" show_stripe_button="false" />
@@ -654,10 +691,11 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.32980332" />
       <window_info anchor="right" id="Database" order="6" weight="0.32980332" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Bean Validation" order="9" weight="0.32980332" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -690,13 +728,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/index.jsp" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa15264.48345/HelloWorldController.java" />
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/resources/js/simple-test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -711,20 +742,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/spring-mvc-demo-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="38" selection-start-column="38" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/luv2code/springdemo/mvc/HelloWorldController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -732,20 +753,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="1166" selection-start-line="1166" selection-end-line="1166" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/luv2code/springdemo/mvc/HomeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/helloworld-form.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -766,6 +773,118 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/helloworld-form.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/hibernate-validator-6.0.13.Final.jar!/META-INF/maven/org.hibernate.validator/hibernate-validator/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/hibernate-validator-6.0.13.Final.jar!/META-INF/maven/org.hibernate.validator/hibernate-validator/pom.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/luv2code/springdemo/mvc/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/student-form.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="5" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa15064.6166/CustomerController.java" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa12260.12958/Customer.java" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa12260.12723/CustomerController.java" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa12260.39894/CustomerController.java" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa12260.39969/Customer.java" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa8812.35059/Customer.java" />
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa3444.36471/Customer.java" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa3444.39867/CustomerController.java" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa3444.24948/CustomerController.java" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa3444.26525/Customer.java" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa3444.29384/HomeController.java" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa3444.30673/HelloWorldController.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/luv2code/springdemo/mvc/HomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../hibernate-validator-6.0.13.Final/dist/lib/required/validation-api-2.0.1.Final.jar!/javax/validation/Valid.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="20" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../hibernate-validator-6.0.13.Final/dist/lib/required/validation-api-2.0.1.Final.jar!/java-header-style.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ideaLibSources/validation-api-2.0.1.Final-sources.jar!/javax/validation/Valid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ideaLibSources/validation-api-2.0.1.Final-sources.jar!/javax/validation/Validator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1506">
+          <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ideaLibSources/validation-api-2.0.1.Final-sources.jar!/javax/validation/ValidatorContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1251">
+          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/luv2code/springdemo/mvc/StudentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/main-menu.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/student-confirmation.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/spring-mvc-demo.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -773,51 +892,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/main-menu.jsp">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/spring-mvc-demo-servlet.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="35" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="35" />
+        <state relative-caret-position="82">
+          <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/luv2code/springdemo/mvc/StudentController.java">
+    <entry file="file://$PROJECT_DIR$/src/resources/messages.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+        <state>
+          <caret column="47" selection-start-column="47" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/luv2code/springdemo/mvc/com/luv2code/springdemo/mvc/validation/CourseCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="9" column="55" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/student-form.jsp">
+    <entry file="file://$PROJECT_DIR$/src/com/luv2code/springdemo/mvc/CustomerController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="34" column="4" lean-forward="true" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/luv2code/springdemo/mvc/Student.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="806">
-          <caret line="64" selection-start-line="64" selection-end-line="64" />
+        <state relative-caret-position="228">
+          <caret line="56" column="28" lean-forward="true" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
           <folding>
-            <element signature="e#1273#1274#0" expanded="true" />
-            <element signature="e#1313#1314#0" expanded="true" />
-            <element signature="e#1379#1380#0" expanded="true" />
-            <element signature="e#1437#1438#0" expanded="true" />
-            <element signature="e#1513#1514#0" expanded="true" />
-            <element signature="e#1552#1553#0" expanded="true" />
-            <element signature="e#1618#1619#0" expanded="true" />
-            <element signature="e#1674#1675#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/student-confirmation.jsp">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/customer-form.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+        <state relative-caret-position="221">
+          <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/customer-confirmation.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/luv2code/springdemo/mvc/com/luv2code/springdemo/mvc/validation/CourseCodeConstraintValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#376#377#0" expanded="true" />
+            <element signature="e#419#420#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/luv2code/springdemo/mvc/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="26" column="7" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1304#1305#0" expanded="true" />
+            <element signature="e#1337#1338#0" expanded="true" />
+            <element signature="e#1389#1390#0" expanded="true" />
+            <element signature="e#1433#1434#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -900,6 +1045,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>Java EE 6-Java EE 6</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
