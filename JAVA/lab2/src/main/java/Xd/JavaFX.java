@@ -41,6 +41,8 @@ public class JavaFX extends Application
     JarFilee jarFilee;
 
     public static ArrayList<String> methodsList;
+    public static ArrayList<String> constructorsList;
+    public static ArrayList<String> fieldsList;
 
 
     public JavaFX() throws IOException {
@@ -137,7 +139,11 @@ public class JavaFX extends Application
                 System.out.println("Pobrana klasa: " + string);
                 try {
                     JarFilee.onlyMethods(string);
+                    JarFilee.getConstructorsFromClass(string);
+                    JarFilee.getFieldsFromClass(string);
                     methodsList = JarFilee.onlyMethods(string);
+                    constructorsList = JarFilee.getConstructorsFromClass(string);
+                    fieldsList = JarFilee.getFieldsFromClass(string);
                     //methodsView.setItems(methodList);
                     System.out.println("Metody pobrane z jara dla klasy: " + jarFilee.onlyMethods(string));
                     thirdStage();
@@ -211,33 +217,23 @@ public class JavaFX extends Application
         secondStage.close(); // close the first stage (Window)
         final ObservableList<String> classesList = FXCollections.observableArrayList(JarFilee.onlyClassesArray);
         final ObservableList<String> methodList = FXCollections.observableArrayList(methodsList);
+        final ObservableList<String> constructorList = FXCollections.observableArrayList(constructorsList);
+        final ObservableList<String> fieldList = FXCollections.observableArrayList(fieldsList);
         System.out.println("metodList: " + methodList);
+        System.out.println("constructorList: " + constructorList);
+        System.out.println("fieldsList: " + fieldsList);
         classesView.setItems(classesList);
         classesView.setPrefSize(600,660);
-//        classesView.setOnMouseClicked(new EventHandler<MouseEvent>() {
-//            @Override
-//            public void handle(MouseEvent event) {
-//                String string = (String) classesView.getSelectionModel().getSelectedItem();
-//                System.out.println("Pobrana klasa: " + string);
-//                try {
-//                    JarFilee.onlyMethods(string);
-//                    methodsList = JarFilee.onlyMethods(string);
-//                    //methodsView.setItems(methodList);
-//                    System.out.println("Metody pobrane z jara dla klasy: " + jarFilee.onlyMethods(string));
-//                } catch (NotFoundException e) {
-//                    e.printStackTrace();
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//
-//            }
-//        });
 
         packagesView.setPrefSize(600, 160);
         methodsView.setItems(methodList);
         System.out.println("metody: " + methodList);
         methodsView.setPrefSize(600,160);
+        constructorView.setItems(constructorList);
+        System.out.println("konstruktory: " + constructorList);
         constructorView.setPrefSize(600, 160);
+        fieldsView.setItems(fieldList);
+        System.out.println("pola: " + fieldList);
         fieldsView.setPrefSize(600,160);
         HBox hBoxWithoutButtons = new HBox();
         hBoxWithoutButtons.setPrefSize(1400,660);
@@ -297,21 +293,6 @@ public class JavaFX extends Application
         textGrid.addRow(0, text1);
         textGrid.setAlignment(Pos.TOP_RIGHT);
     }
-
-    private void setConfigurationForGridPane(GridPane gridPane) {
-        ColumnConstraints column1 = new ColumnConstraints();
-        ColumnConstraints column2 = new ColumnConstraints();
-        column1.setPercentWidth(10);
-        column2.setPercentWidth(10);
-        gridPane.getColumnConstraints().addAll(column1, column2);
-    }
-
-
-
-    private VBox getMenuBarWithVBox(MenuBar menuBar) {
-        return new VBox(menuBar);
-    }
-
     public static void main(String[] args) {
         launch(args);
     }
