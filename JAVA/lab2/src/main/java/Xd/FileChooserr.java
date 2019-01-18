@@ -6,11 +6,15 @@ import javafx.stage.FileChooser;
 
 import javax.swing.*;
 import java.io.File;
+import java.io.IOException;
+import java.util.jar.JarFile;
 
 public class FileChooserr
 {
     FileChooser fileChooser = new FileChooser();
-    ListView listView;
+
+    public FileChooserr() throws IOException {
+    }
 
     public File PickMe() throws Exception{
         fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("JAR Files", "*.jar"));

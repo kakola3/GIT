@@ -5,7 +5,7 @@ import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
 /**
- * Unit test for simple JarFile.
+ * Unit test for simple JarFilee.
  */
 public class JarFileTest
     extends TestCase
