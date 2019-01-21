@@ -33,7 +33,7 @@ public class JavaFX extends Application
 
     ListView classesView = new ListView();
 
-    ListView packagesView = new ListView();
+    ListView packageView = new ListView();
     ListView methodsView = new ListView();
     ListView constructorView = new ListView();
     ListView fieldsView = new ListView();
@@ -43,6 +43,7 @@ public class JavaFX extends Application
     public static ArrayList<String> methodsList;
     public static ArrayList<String> constructorsList;
     public static ArrayList<String> fieldsList;
+    public static String packagesList;
 
 
     public JavaFX() throws IOException {
@@ -141,9 +142,11 @@ public class JavaFX extends Application
                     JarFilee.onlyMethods(string);
                     JarFilee.getConstructorsFromClass(string);
                     JarFilee.getFieldsFromClass(string);
+                    JarFilee.showPackage(string);
                     methodsList = JarFilee.onlyMethods(string);
                     constructorsList = JarFilee.getConstructorsFromClass(string);
                     fieldsList = JarFilee.getFieldsFromClass(string);
+                    packagesList = JarFilee.showPackage(string);
                     //methodsView.setItems(methodList);
                     System.out.println("Metody pobrane z jara dla klasy: " + jarFilee.onlyMethods(string));
                     thirdStage();
@@ -156,7 +159,7 @@ public class JavaFX extends Application
             }
         });
 
-        packagesView.setPrefSize(600, 160);
+        packageView.setPrefSize(600, 160);
         methodsView.setPrefSize(600,160);
         constructorView.setPrefSize(600, 160);
         fieldsView.setPrefSize(600,160);
@@ -170,7 +173,7 @@ public class JavaFX extends Application
         VBox restDesignStuff = new VBox();
         restDesignStuff.setPrefSize(700, 660);
         restDesignStuff.setAlignment(Pos.CENTER_RIGHT);
-        HBox packagesOverview = new HBox(packagesView);
+        HBox packagesOverview = new HBox(packageView);
         packagesOverview.setAlignment(Pos.BASELINE_RIGHT);
         packagesOverview.setPrefSize(500,160);
         HBox methodsOverview = new HBox(methodsView);
@@ -219,13 +222,16 @@ public class JavaFX extends Application
         final ObservableList<String> methodList = FXCollections.observableArrayList(methodsList);
         final ObservableList<String> constructorList = FXCollections.observableArrayList(constructorsList);
         final ObservableList<String> fieldList = FXCollections.observableArrayList(fieldsList);
+        final ObservableList<String> packageList = FXCollections.observableArrayList(packagesList);
         System.out.println("metodList: " + methodList);
         System.out.println("constructorList: " + constructorList);
         System.out.println("fieldsList: " + fieldsList);
         classesView.setItems(classesList);
         classesView.setPrefSize(600,660);
 
-        packagesView.setPrefSize(600, 160);
+        packageView.setItems(packageList);
+        System.out.println("package: " + packageList);
+        packageView.setPrefSize(600, 160);
         methodsView.setItems(methodList);
         System.out.println("metody: " + methodList);
         methodsView.setPrefSize(600,160);
@@ -245,7 +251,7 @@ public class JavaFX extends Application
         VBox restDesignStuff = new VBox();
         restDesignStuff.setPrefSize(700, 660);
         restDesignStuff.setAlignment(Pos.CENTER_RIGHT);
-        HBox packagesOverview = new HBox(packagesView);
+        HBox packagesOverview = new HBox(packageView);
         packagesOverview.setAlignment(Pos.BASELINE_RIGHT);
         packagesOverview.setPrefSize(500,160);
         HBox methodsOverview = new HBox(methodsView);

@@ -6,7 +6,6 @@ import java.io.*;
 
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
-import java.util.jar.JarFile;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -21,7 +20,6 @@ public class JarFilee {
         try {
             ZipInputStream is = new ZipInputStream(new FileInputStream(file));
             ZipEntry ze;
-
             byte[] buf = new byte[4096];
 
             StringBuilder sb = new StringBuilder();
@@ -212,5 +210,19 @@ public class JarFilee {
         return fullFieldsHeader;
     }
 
+    public static String showPackage(String className){
+        String packageName = className;
+        String[] output = packageName.split("\\.");
+        String cutOutput = "";
+        for(int i=0; i<output.length-1; i++){
+                System.out.println("output[i] if: " + output[i]);
+                cutOutput += output[i] + ".";
+        }
+
+        cutOutput = cutOutput.substring(0, cutOutput.length()-1);
+
+        System.out.println("cutOutput: " + cutOutput);
+        return cutOutput;
+    }
 }
 
