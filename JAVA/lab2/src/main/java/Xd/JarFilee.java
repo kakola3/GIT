@@ -42,8 +42,8 @@ public class JarFilee {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        this.onlyClassesArray = onlyClasses();
-        //onlyMethods("com.diamond.iain.javagame.utils.OSValidator");
+        this.onlyClassesArray = onlyClasses(); // doing
+        //onlyMethods("com.diamond.iain.javagame.utils.OSValidator"); // tests
     }
 
     public ArrayList<String> onlyClasses() throws IOException{

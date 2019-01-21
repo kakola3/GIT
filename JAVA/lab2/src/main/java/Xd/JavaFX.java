@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -15,6 +16,7 @@ import javassist.NotFoundException;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
@@ -29,18 +31,24 @@ public class JavaFX extends Application
     TextArea text1 = new TextArea();
     Stage primaryStage;
     Stage secondStage = new Stage();
-    Stage thirdStage = new Stage();
+    public static Stage thirdStage = new Stage();
+
+    String chosenClassForRemove;
+    String chosenMethodForRemove;
+    String chosenFieldForRemove;
+    String chosenConstructorForRemove;
 
     ListView classesView = new ListView();
 
     ListView packageView = new ListView();
-    ListView methodsView = new ListView();
+    static ListView methodsView = new ListView();
     ListView constructorView = new ListView();
     ListView fieldsView = new ListView();
 
     JarFilee jarFilee;
 
-    public static ArrayList<String> methodsList;
+    public static ArrayList<String> methodsList; // wrote at the beginning
+    public static ArrayList<String> methodsListToSave; // prepared to save as new .jar
     public static ArrayList<String> constructorsList;
     public static ArrayList<String> fieldsList;
     public static String packagesList;
@@ -76,7 +84,7 @@ public class JavaFX extends Application
         button1.setText("Enter a .jar file");
         button2.setText("Explore an entered .jar file");
         button3.setText("Save the modified .jar file");
-        //button4.setText("Button4");
+        //button4.setText("RemoveClass");
         //button5.setText("Button5");
 
         button1.prefWidthProperty().bind(buttons.widthProperty());
@@ -91,7 +99,7 @@ public class JavaFX extends Application
         //button4.setPrefHeight(40);
         //button5.setPrefHeight(40);
 
-        buttons.addRow(0, button1, button2, button3);//, button4, button5);
+        buttons.addRow(0, button1, button2, button3);//, button4);//, button5);
         buttons.setAlignment(Pos.BOTTOM_LEFT);
 
         button1.setOnAction(new EventHandler<ActionEvent>() {
@@ -125,6 +133,16 @@ public class JavaFX extends Application
                 }
             }
         });
+
+//        button4.setOnAction(new EventHandler<ActionEvent>() {
+//            @Override
+//            public void handle(ActionEvent event) {
+//                ClassOperation.removeChosenClass(chosenClassForRemove);
+//                thirdStage.close();
+//                thirdStage.show();
+//            }
+//        });
+
     }
 
     public void secondStage() throws IOException {
@@ -149,6 +167,8 @@ public class JavaFX extends Application
                     packagesList = JarFilee.showPackage(string);
                     //methodsView.setItems(methodList);
                     System.out.println("Metody pobrane z jara dla klasy: " + jarFilee.onlyMethods(string));
+                    chosenClassForRemove = string;
+                    System.out.println("chosenClassForRemove: " + chosenClassForRemove);
                     thirdStage();
                 } catch (NotFoundException e) {
                     e.printStackTrace();
@@ -158,6 +178,7 @@ public class JavaFX extends Application
 
             }
         });
+
 
         packageView.setPrefSize(600, 160);
         methodsView.setPrefSize(600,160);
@@ -232,24 +253,64 @@ public class JavaFX extends Application
         packageView.setItems(packageList);
         System.out.println("package: " + packageList);
         packageView.setPrefSize(600, 160);
-        methodsView.setItems(methodList);
-        System.out.println("metody: " + methodList);
-        methodsView.setPrefSize(600,160);
-        constructorView.setItems(constructorList);
-        System.out.println("konstruktory: " + constructorList);
-        constructorView.setPrefSize(600, 160);
-        fieldsView.setItems(fieldList);
-        System.out.println("pola: " + fieldList);
-        fieldsView.setPrefSize(600,160);
+
+            methodsView.setItems(methodList);
+            System.out.println("metody: " + methodList);
+            methodsView.setPrefSize(600,160);
+            methodsView.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent event) {
+                    String string = (String) methodsView.getSelectionModel().getSelectedItem();
+                    chosenMethodForRemove = string;
+                }
+            });
+
+            constructorView.setItems(constructorList);
+            System.out.println("konstruktory: " + constructorList);
+            constructorView.setPrefSize(600, 160);
+
+            fieldsView.setItems(fieldList);
+            System.out.println("pola: " + fieldList);
+            fieldsView.setPrefSize(600,160);
+
         HBox hBoxWithoutButtons = new HBox();
         hBoxWithoutButtons.setPrefSize(1400,660);
         hBoxWithoutButtons.setAlignment(Pos.TOP_CENTER);
-        buttons.setAlignment(Pos.BOTTOM_CENTER);
+
+            buttons.setAlignment(Pos.BOTTOM_CENTER);
+
         VBox jarOverview = new VBox(classesView); // classesView
-        jarOverview.setPrefSize(700, 660);
+        jarOverview.setPrefSize(600, 660);
         jarOverview.setAlignment(Pos.CENTER_LEFT);
+
+        final Button buttonVerticalOne = new Button();
+        final Button buttonVerticalTwo = new Button();
+        final Button buttonVerticalThree = new Button();
+        final Button buttonVerticalFour = new Button();
+        final Button buttonVerticalFive = new Button();
+        final Button buttonVerticalSix = new Button();
+        final Button buttonVerticalSeven = new Button();
+        final Button buttonVerticalEight = new Button();
+        final Button buttonVerticalNine = new Button();
+        final Button buttonVerticalTen = new Button();
+        buttonVerticalOne.setPrefHeight(20);buttonVerticalTwo.setPrefHeight(20);buttonVerticalThree.setPrefHeight(20);buttonVerticalFour.setPrefHeight(20);
+        buttonVerticalFive.setPrefHeight(20);buttonVerticalSix.setPrefHeight(20);buttonVerticalSeven.setPrefHeight(20);buttonVerticalEight.setPrefHeight(20);
+        buttonVerticalNine.setPrefHeight(20);buttonVerticalTen.setPrefHeight(20);
+        buttonVerticalOne.setPrefWidth(195);buttonVerticalTwo.setPrefWidth(195);buttonVerticalThree.setPrefWidth(195);buttonVerticalFour.setPrefWidth(195);
+        buttonVerticalFive.setPrefWidth(195);buttonVerticalSix.setPrefWidth(195);buttonVerticalSeven.setPrefWidth(195);buttonVerticalEight.setPrefWidth(195);
+        buttonVerticalNine.setPrefWidth(195);buttonVerticalTen.setPrefWidth(195);
+        buttonVerticalOne.setText("Add Class");buttonVerticalTwo.setText("Remove Class");
+        buttonVerticalThree.setText("Add Method");buttonVerticalFour.setText("Remove Method");
+        buttonVerticalFive.setText("Add Field");buttonVerticalSix.setText("Remove Field");
+        buttonVerticalSeven.setText("Add Constructor");buttonVerticalEight.setText("Remove Constructor");
+        buttonVerticalNine.setText("Button9");buttonVerticalTen.setText("Button10");
+        VBox verticalButtonsBox = new VBox();
+        verticalButtonsBox.setPrefSize(200, 660);
+        verticalButtonsBox.setAlignment(Pos.CENTER);
+        verticalButtonsBox.getChildren().addAll(buttonVerticalOne, buttonVerticalTwo, buttonVerticalThree, buttonVerticalFour, buttonVerticalFive, buttonVerticalSix, buttonVerticalSeven, buttonVerticalEight, buttonVerticalNine, buttonVerticalTen);
+
         VBox restDesignStuff = new VBox();
-        restDesignStuff.setPrefSize(700, 660);
+        restDesignStuff.setPrefSize(600, 660);
         restDesignStuff.setAlignment(Pos.CENTER_RIGHT);
         HBox packagesOverview = new HBox(packageView);
         packagesOverview.setAlignment(Pos.BASELINE_RIGHT);
@@ -276,6 +337,7 @@ public class JavaFX extends Application
         restDesignStuff.getChildren().add(constructorsOverview);
 
         hBoxWithoutButtons.getChildren().add(jarOverview);
+        hBoxWithoutButtons.getChildren().add(verticalButtonsBox);
         hBoxWithoutButtons.getChildren().add(restDesignStuff);
 
         VBox vBox = new VBox();
@@ -290,7 +352,31 @@ public class JavaFX extends Application
         thirdStage.setTitle("UnJar");
         thirdStage.setResizable(false);
         thirdStage.show();
+
+        buttonVerticalTwo.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                    ClassOperation.removeChosenClass(chosenClassForRemove);
+                    thirdStage.close();
+                    thirdStage.show();
+            }
+        });
+
+        buttonVerticalFour.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                ArrayList<String> newMethodsList = MethodOperation.removeChosenMethod(chosenMethodForRemove);
+                methodsListToSave = newMethodsList;
+                System.out.println("methodList: " + methodsListToSave);
+                final ObservableList<String> newMethodList = FXCollections.observableArrayList(newMethodsList);
+                methodsView.setItems(newMethodList);
+               // methodsView.refresh();
+                System.out.println("Method list to save as new .jar: " + methodsListToSave);
+            }
+        });
+
     }
+
     public void enterTextArea(){
         text1.setText(filePath);
         System.out.println("enterTextArea() filePath: " + filePath);
