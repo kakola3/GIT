@@ -1,23 +1,33 @@
 package Xd;
 
+import javafx.stage.FileChooser;
 import javassist.*;
 
 import java.io.*;
 
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.jar.JarFile;
+import java.util.jar.Manifest;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
 public class JarFilee {
-    public static File jarFile;
-    String jarPath;
+    //public static File jarFile;
+    public static JarFile jarFileJAR;
+    public static Manifest manifest;
     public static ArrayList<String> onlyClassesArray = new ArrayList<String>();
     public static ClassPool classPool;
+    public static ArrayList<ZipEntry> notClassElements;
+
+    public static ArrayList<String> allFiles;
 
     public void openJar(File file) throws IOException, NotFoundException {
-        this.jarFile = file;
+        this.jarFileJAR = FileChooserr.injectJarReader(file);
+        //this.jarFile = file;
         try {
+
             ZipInputStream is = new ZipInputStream(new FileInputStream(file));
             ZipEntry ze;
             byte[] buf = new byte[4096];
@@ -33,20 +43,29 @@ public class JarFilee {
                 writer.write(line);
                 writer.write("\n");
 
+                // Enumeration<? extends ZipEntry> enumOfJar = jarFileJAR.entries();
+
                 // BufferedWriter writer = new BufferedWriter(new FileWriter("c:/temp/samplefile1.txt"));
                 // writer.write(fileContent);
 
             }
             writer.close();
             is.close();
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }
         this.onlyClassesArray = onlyClasses(); // doing
+        allFiles = getAllElements(jarFileJAR);
+        System.out.println("allFiles: " + allFiles);
+        notClassElements = getNotClassElements(jarFileJAR);
+        System.out.println("notClassElements: " + notClassElements);
+        //getNotClassElements();
         //onlyMethods("com.diamond.iain.javagame.utils.OSValidator"); // tests
     }
 
-    public ArrayList<String> onlyClasses() throws IOException{
+    public ArrayList<String> onlyClasses() throws IOException {
         ArrayList<String> onlyClassesArray = new ArrayList<String>();
         BufferedReader br = new BufferedReader(new FileReader("samplefile.txt"));
         String line;
@@ -63,12 +82,12 @@ public class JarFilee {
     }
 
     public static ArrayList<String> onlyMethods(String className) throws NotFoundException, IOException {
-       // jarPath = jarFile.getPath();
+        // jarPath = jarFile.getPath();
         //JarFile jarFile = new JarFile(jarPath);
-       // System.out.println("jarFIle: " + jarPath);
-       // this.classPool = ClassPool.getDefault();
+        // System.out.println("jarFIle: " + jarPath);
+        // this.classPool = ClassPool.getDefault();
         classPool = ClassPool.getDefault();
-       // this.classPool.appendClassPath(JavaFX.file.getAbsolutePath());
+        // this.classPool.appendClassPath(JavaFX.file.getAbsolutePath());
         classPool.appendClassPath(JavaFX.file.getAbsolutePath());
         ArrayList<CtMethod> methods = new ArrayList<CtMethod>();
         ArrayList<String> methodsFullHeaders = null;
@@ -91,7 +110,7 @@ public class JarFilee {
         StringBuilder fullMethodHeader;
         ArrayList<String> fullMethodsHeader = new ArrayList<String>();
         try {
-            for (CtMethod method: methods) {
+            for (CtMethod method : methods) {
                 CtClass[] parameters = method.getParameterTypes();
 
                 fullMethodHeader = new StringBuilder();
@@ -99,9 +118,9 @@ public class JarFilee {
                 fullMethodHeader.append(makeAccessModifier(method))
                         .append(method.getReturnType().getName()).append(" ")
                         .append(method.getName()).append("(");
-                for(int i = 0; i < parameters.length; i++) {
+                for (int i = 0; i < parameters.length; i++) {
                     String separator = ", ";
-                    if (i == parameters.length -1) separator = "";
+                    if (i == parameters.length - 1) separator = "";
                     fullMethodHeader
                             .append(parameters[i].getName()).append(separator);
                 }
@@ -118,15 +137,15 @@ public class JarFilee {
     public static String makeAccessModifier(CtMember method) {
         StringBuilder accessModifier = new StringBuilder();
         int modifier = method.getModifiers();
-        if(java.lang.reflect.Modifier.isPublic(modifier)) accessModifier.append("public ");
-        if(java.lang.reflect.Modifier.isPrivate(modifier)) accessModifier.append("private ");
-        if(java.lang.reflect.Modifier.isProtected(modifier)) accessModifier.append("protected ");
-        if(java.lang.reflect.Modifier.isFinal(modifier)) accessModifier.append("final ");
-        if(java.lang.reflect.Modifier.isSynchronized(modifier)) accessModifier.append("synchronized ");
-        if(java.lang.reflect.Modifier.isInterface(modifier)) accessModifier.append("interface ");
-        if(java.lang.reflect.Modifier.isStatic(modifier)) accessModifier.append("static ");
-        if(java.lang.reflect.Modifier.isTransient(modifier)) accessModifier.append("transient ");
-        if(Modifier.isVolatile(modifier)) accessModifier.append("volatile ");
+        if (java.lang.reflect.Modifier.isPublic(modifier)) accessModifier.append("public ");
+        if (java.lang.reflect.Modifier.isPrivate(modifier)) accessModifier.append("private ");
+        if (java.lang.reflect.Modifier.isProtected(modifier)) accessModifier.append("protected ");
+        if (java.lang.reflect.Modifier.isFinal(modifier)) accessModifier.append("final ");
+        if (java.lang.reflect.Modifier.isSynchronized(modifier)) accessModifier.append("synchronized ");
+        if (java.lang.reflect.Modifier.isInterface(modifier)) accessModifier.append("interface ");
+        if (java.lang.reflect.Modifier.isStatic(modifier)) accessModifier.append("static ");
+        if (java.lang.reflect.Modifier.isTransient(modifier)) accessModifier.append("transient ");
+        if (Modifier.isVolatile(modifier)) accessModifier.append("volatile ");
         return accessModifier.toString();
     }
 
@@ -157,9 +176,9 @@ public class JarFilee {
                 fullConstructorHeader = new StringBuilder();
                 fullConstructorHeader
                         .append(constructor.getName()).append("(");
-                for(int i = 0; i < parameters.length; i++) {
+                for (int i = 0; i < parameters.length; i++) {
                     String separator = ", ";
-                    if (i == parameters.length -1) separator = "";
+                    if (i == parameters.length - 1) separator = "";
                     fullConstructorHeader
                             .append(parameters[i].getName()).append(separator);
                 }
@@ -175,7 +194,7 @@ public class JarFilee {
 
     public static ArrayList<String> getFieldsFromClass(String chosenClass) {
         ArrayList<CtField> fields = new ArrayList<CtField>();
-        ArrayList<String>fieldsFullHeaders = null;
+        ArrayList<String> fieldsFullHeaders = null;
         try {
             CtClass ctExampleClass = classPool.get(chosenClass);
             ctExampleClass.stopPruning(true); //TODO find out what is pruning
@@ -210,19 +229,46 @@ public class JarFilee {
         return fullFieldsHeader;
     }
 
-    public static String showPackage(String className){
+    public static String showPackage(String className) {
         String packageName = className;
         String[] output = packageName.split("\\.");
         String cutOutput = "";
-        for(int i=0; i<output.length-1; i++){
-                System.out.println("output[i] if: " + output[i]);
-                cutOutput += output[i] + ".";
+        for (int i = 0; i < output.length - 1; i++) {
+            System.out.println("output[i] if: " + output[i]);
+            cutOutput += output[i] + ".";
         }
 
-        cutOutput = cutOutput.substring(0, cutOutput.length()-1);
+        cutOutput = cutOutput.substring(0, cutOutput.length() - 1);
 
         System.out.println("cutOutput: " + cutOutput);
         return cutOutput;
+    }
+
+    public ArrayList<String> getAllElements(JarFile jarFile) {
+        ArrayList<String> allFiles = new ArrayList<>();
+        Enumeration<? extends ZipEntry> enumOfJar = jarFile.entries();
+        while (enumOfJar.hasMoreElements()) {
+            ZipEntry element = enumOfJar.nextElement();
+            String file = element.toString();
+            if (file.endsWith(".class")) {
+                file = file.replace("/", ".");
+                allFiles.add(file);
+            }
+        }
+        return allFiles;
+    }
+
+    public ArrayList<ZipEntry> getNotClassElements(JarFile jarFile) {
+        ArrayList<ZipEntry> notClassElements = new ArrayList<>();
+        Enumeration<? extends ZipEntry> enumOfJar = jarFile.entries();
+        while (enumOfJar.hasMoreElements()) {
+            ZipEntry element = enumOfJar.nextElement();
+            String file = element.toString().trim();
+            if (!file.endsWith("/") && !file.endsWith(".MF") && !file.equals(".class") && !file.contains(".class") && !file.endsWith(".class")) {
+                notClassElements.add(element);
+            }
+        }
+        return notClassElements;
     }
 }
 

@@ -11,7 +11,7 @@ public class ClassOperation
             System.out.println("Czy chcesz usunac klase " + chosenClass + "?");
             temporaryOnlyClassesArray.remove(chosenClass);
             System.out.println("temporaryOnlyClassesArray: " + temporaryOnlyClassesArray);
-            JarFilee.onlyClassesArray = temporaryOnlyClassesArray;
+            JarFilee.allFiles = temporaryOnlyClassesArray;
         }
     }
 }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class MethodOperation
 {
-    public static ArrayList<String> removeChosenMethod(String chosenMethod){
+    public static ArrayList<String> removeChosenMethod(String chosenMethod){ // FROM VIEW
         ArrayList<String> temporaryOnlyMethodArray  = JavaFX.methodsList;
         System.out.println("temporaryOnlyMethodArray: " + temporaryOnlyMethodArray);
         if(temporaryOnlyMethodArray.contains(chosenMethod)){
@@ -15,5 +15,9 @@ public class MethodOperation
             //JavaFX.methodsView.refresh();
         }
         return temporaryOnlyMethodArray;
+    }
+
+    public static void updateMethodsInClass(String choosenClass, String choosenMethod){
+
     }
 }
