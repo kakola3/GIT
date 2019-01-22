@@ -1,5 +1,6 @@
 package Xd;
 
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,18 +12,22 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javassist.ClassPool;
 import javassist.NotFoundException;
 
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
 public class JavaFX extends Application
 {
+    FileChooser fileChooserToSave = new FileChooser();
     GridPane buttons = new GridPane();
     GridPane textGrid = new GridPane();
     FileChooserr fileChooserr = new FileChooserr();
@@ -356,9 +361,19 @@ public class JavaFX extends Application
         buttonVerticalTwo.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                    ClassOperation.removeChosenClass(chosenClassForRemove);
+                try {
+                    System.out.println("ClassPool before removing: " + JarFilee.classPool.getCtClass(chosenClassForRemove));
+                } catch (NotFoundException e) {
+                    e.printStackTrace();
+                }
+                ClassOperation.removeChosenClass(chosenClassForRemove);
                     thirdStage.close();
                     thirdStage.show();
+                try {
+                    System.out.println("ClassPool after removing: " + JarFilee.classPool.get(chosenClassForRemove));
+                } catch (NotFoundException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -375,6 +390,19 @@ public class JavaFX extends Application
             }
         });
 
+        buttonVerticalTen.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("Saving the jar...");
+                fileChooserToSave.getExtensionFilters().add(new FileChooser.ExtensionFilter("JAR Files", "*.jar"));
+                File fileToSave = fileChooserToSave.showSaveDialog(thirdStage);
+                List<String> allClasses = JarFilee.allFiles;
+                if (FileSaver.saveJar(fileToSave, allClasses)) {
+                    showAlert(Alert.AlertType.INFORMATION, "Success", "Successfully saved a jar", "");
+                }
+            }
+        });
+
     }
 
     public void enterTextArea(){
@@ -385,6 +413,16 @@ public class JavaFX extends Application
         textGrid.addRow(0, text1);
         textGrid.setAlignment(Pos.TOP_RIGHT);
     }
+
+    public void showAlert(Alert.AlertType type, String title, String header, String content) {
+        Alert alert = new Alert(type);
+        alert.setTitle(title);
+        alert.setHeaderText(header);
+        alert.setContentText(content);
+        alert.show();
+
+    }
+
     public static void main(String[] args) {
         launch(args);
     }
