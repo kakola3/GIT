@@ -1,7 +1,6 @@
 package Xd;
 
 import java.util.ArrayList;
-import java.util.jar.JarFile;
 
 public class MethodOperation
 {
@@ -16,9 +15,5 @@ public class MethodOperation
             //JavaFX.methodsView.refresh();
         }
         return temporaryOnlyMethodArray;
-    }
-
-    public static void updateMethodsInClass(String choosenClass, String choosenMethod){
-
     }
 }

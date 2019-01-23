@@ -267,7 +267,7 @@ public class JarFilee {
         return notClassElements;
     }
 
-    public static void updateMethodsForClass(String className,String removableMethod) throws NotFoundException {
+    public static void updateMethodsForClass(String className, String removableMethod) throws NotFoundException {
         CtClass ctExampleClass = classPool.get(className);
         ctExampleClass.stopPruning(true); //TODO find out what is pruning
         CtMethod[] classMethods = ctExampleClass.getDeclaredMethods();
@@ -281,6 +281,22 @@ public class JarFilee {
             }
         }
         System.out.println("Methods after removing: " + classMethods.toString());
+    }
+
+    public static void updateFieldsForClass(String className, String removableField) throws NotFoundException {
+        CtClass ctExampleClass = classPool.get(className);
+        ctExampleClass.stopPruning(true); //TODO find out what is pruning
+        CtField[] classFields = ctExampleClass.getDeclaredFields();
+        for(CtField ctField : classFields){
+            System.out.println("ctField: " + ctField.getName());
+            String ctFieldForRemove = ctField.getName();
+            System.out.println("ctFieldForRemove: " + ctFieldForRemove);
+            if(removableField.contains(ctFieldForRemove)) {
+                ctExampleClass.removeField(ctField);
+                System.out.println("ctField2: " + ctField);
+            }
+        }
+        System.out.println("Methods after removing: " + classFields.toString());
     }
 }
 
