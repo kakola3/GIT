@@ -12,7 +12,6 @@ public class FieldOperation
             temporaryOnlyFieldArray.remove(chosenField);
             System.out.println("temporaryOnlyMethodArray: " + temporaryOnlyFieldArray);
             JavaFX.fieldsList = temporaryOnlyFieldArray;
-            //JavaFX.methodsView.refresh();
         }
         return temporaryOnlyFieldArray;
     }

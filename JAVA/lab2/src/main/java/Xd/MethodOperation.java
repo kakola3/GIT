@@ -12,7 +12,6 @@ public class MethodOperation
             temporaryOnlyMethodArray.remove(chosenMethod);
             System.out.println("temporaryOnlyMethodArray: " + temporaryOnlyMethodArray);
             JavaFX.methodsList = temporaryOnlyMethodArray;
-            //JavaFX.methodsView.refresh();
         }
         return temporaryOnlyMethodArray;
     }

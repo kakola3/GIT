@@ -298,5 +298,21 @@ public class JarFilee {
         }
         System.out.println("Methods after removing: " + classFields.toString());
     }
+
+    public static void updateConstructorsForClass(String className, String removableConstructor) throws NotFoundException {
+        CtClass ctExampleClass = classPool.get(className);
+        ctExampleClass.stopPruning(true); //TODO find out what is pruning
+        CtConstructor[] classConstructors = ctExampleClass.getDeclaredConstructors();
+        for(CtConstructor ctConstructor : classConstructors){
+            System.out.println("ctConstructor: " + ctConstructor.getName());
+            String ctConstructorForRemove = ctConstructor.getName();
+            System.out.println("ctConstructorForRemove: " + ctConstructorForRemove);
+            if(removableConstructor.contains(ctConstructorForRemove)) {
+                ctExampleClass.removeConstructor(ctConstructor);
+                System.out.println("ctField2: " + ctConstructor);
+            }
+        }
+        System.out.println("Methods after removing: " + classConstructors.toString());
+    }
 }
 

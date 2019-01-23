@@ -286,6 +286,13 @@ public class JavaFX extends Application
             constructorView.setItems(constructorList);
             System.out.println("konstruktory: " + constructorList);
             constructorView.setPrefSize(600, 160);
+            constructorView.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent event) {
+                    String string = (String) constructorView.getSelectionModel().getSelectedItem();
+                    chosenConstructorForRemove = string;
+                }
+            });
 
             fieldsView.setItems(fieldList);
             System.out.println("pola: " + fieldList);
@@ -410,7 +417,6 @@ public class JavaFX extends Application
                 }
                 final ObservableList<String> newMethodList = FXCollections.observableArrayList(newMethodsList);
                 methodsView.setItems(newMethodList);
-               // methodsView.refresh();
 
             }
         });
@@ -428,7 +434,22 @@ public class JavaFX extends Application
                 }
                 final ObservableList<String> newFieldList = FXCollections.observableArrayList(newFieldsList);
                 fieldsView.setItems(newFieldList);
-                // methodsView.refresh();
+            }
+        });
+
+        buttonVerticalEight.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                ArrayList<String> newConstructorsList = ConstructorOperation.removeChosenConstructor(chosenConstructorForRemove);
+                System.out.println("Updating fields for class...");
+                try {
+                    System.out.println("chosenConstructorForRemove: " + chosenConstructorForRemove);
+                    JarFilee.updateConstructorsForClass(chosenClassForRemove, chosenConstructorForRemove);
+                } catch (NotFoundException e) {
+                    e.printStackTrace();
+                }
+                final ObservableList<String> newConstructorList = FXCollections.observableArrayList(newConstructorsList);
+                constructorView.setItems(newConstructorList);
             }
         });
 
