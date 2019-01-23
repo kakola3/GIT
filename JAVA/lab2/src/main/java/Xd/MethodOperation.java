@@ -1,7 +1,6 @@
 package Xd;
 
 import java.util.ArrayList;
-import java.util.jar.JarFile;
 
 public class MethodOperation
 {
@@ -13,12 +12,7 @@ public class MethodOperation
             temporaryOnlyMethodArray.remove(chosenMethod);
             System.out.println("temporaryOnlyMethodArray: " + temporaryOnlyMethodArray);
             JavaFX.methodsList = temporaryOnlyMethodArray;
-            //JavaFX.methodsView.refresh();
         }
         return temporaryOnlyMethodArray;
-    }
-
-    public static void updateMethodsInClass(String choosenClass, String choosenMethod){
-
     }
 }

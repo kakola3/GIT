@@ -53,7 +53,7 @@ public class JavaFX extends Application
     JarFilee jarFilee;
 
     public static ArrayList<String> methodsList; // wrote at the beginning
-    public static ArrayList<String> methodsListToSave; // prepared to save as new .jar
+    //public static ArrayList<String> methodsListToSave; // prepared to save as new .jar
     public static ArrayList<String> constructorsList;
     public static ArrayList<String> fieldsList;
     public static String packagesList;
@@ -286,10 +286,24 @@ public class JavaFX extends Application
             constructorView.setItems(constructorList);
             System.out.println("konstruktory: " + constructorList);
             constructorView.setPrefSize(600, 160);
+            constructorView.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent event) {
+                    String string = (String) constructorView.getSelectionModel().getSelectedItem();
+                    chosenConstructorForRemove = string;
+                }
+            });
 
             fieldsView.setItems(fieldList);
             System.out.println("pola: " + fieldList);
             fieldsView.setPrefSize(600,160);
+            fieldsView.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                String string = (String) fieldsView.getSelectionModel().getSelectedItem();
+                chosenFieldForRemove = string;
+            }
+        });
 
         HBox hBoxWithoutButtons = new HBox();
         hBoxWithoutButtons.setPrefSize(1400,660);
@@ -394,8 +408,6 @@ public class JavaFX extends Application
             @Override
             public void handle(ActionEvent event) {
                 ArrayList<String> newMethodsList = MethodOperation.removeChosenMethod(chosenMethodForRemove);
-                methodsListToSave = newMethodsList;
-                System.out.println("methodList: " + methodsListToSave);
                 System.out.println("Updating methods for class...");
                 try {
                     System.out.println("choosenMethodForRemove: " + chosenMethodForRemove);
@@ -405,8 +417,39 @@ public class JavaFX extends Application
                 }
                 final ObservableList<String> newMethodList = FXCollections.observableArrayList(newMethodsList);
                 methodsView.setItems(newMethodList);
-               // methodsView.refresh();
-                System.out.println("Method list to save as new .jar: " + methodsListToSave);
+
+            }
+        });
+
+        buttonVerticalSix.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                ArrayList<String> newFieldsList = FieldOperation.removeChosenField(chosenFieldForRemove);
+                System.out.println("Updating fields for class...");
+                try {
+                    System.out.println("chosenFieldForRemove: " + chosenFieldForRemove);
+                    JarFilee.updateFieldsForClass(chosenClassForRemove, chosenFieldForRemove);
+                } catch (NotFoundException e) {
+                    e.printStackTrace();
+                }
+                final ObservableList<String> newFieldList = FXCollections.observableArrayList(newFieldsList);
+                fieldsView.setItems(newFieldList);
+            }
+        });
+
+        buttonVerticalEight.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                ArrayList<String> newConstructorsList = ConstructorOperation.removeChosenConstructor(chosenConstructorForRemove);
+                System.out.println("Updating fields for class...");
+                try {
+                    System.out.println("chosenConstructorForRemove: " + chosenConstructorForRemove);
+                    JarFilee.updateConstructorsForClass(chosenClassForRemove, chosenConstructorForRemove);
+                } catch (NotFoundException e) {
+                    e.printStackTrace();
+                }
+                final ObservableList<String> newConstructorList = FXCollections.observableArrayList(newConstructorsList);
+                constructorView.setItems(newConstructorList);
             }
         });
 
