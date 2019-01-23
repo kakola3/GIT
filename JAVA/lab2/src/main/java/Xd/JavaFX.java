@@ -14,6 +14,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javassist.CannotCompileException;
 import javassist.ClassPool;
 import javassist.NotFoundException;
 
@@ -319,27 +320,31 @@ public class JavaFX extends Application
         final Button buttonVerticalTwo = new Button();
         final Button buttonVerticalThree = new Button();
         final Button buttonVerticalFour = new Button();
+        final Button buttonOverrideMethod = new Button();
+        final Button buttonInsertBefore = new Button();
+        final Button buttonInsertAfter = new Button();
         final Button buttonVerticalFive = new Button();
         final Button buttonVerticalSix = new Button();
         final Button buttonVerticalSeven = new Button();
         final Button buttonVerticalEight = new Button();
-        final Button buttonVerticalNine = new Button();
-        final Button buttonVerticalTen = new Button();
+        final Button buttonOverrideConstructor = new Button();
         buttonVerticalOne.setPrefHeight(20);buttonVerticalTwo.setPrefHeight(20);buttonVerticalThree.setPrefHeight(20);buttonVerticalFour.setPrefHeight(20);
         buttonVerticalFive.setPrefHeight(20);buttonVerticalSix.setPrefHeight(20);buttonVerticalSeven.setPrefHeight(20);buttonVerticalEight.setPrefHeight(20);
-        buttonVerticalNine.setPrefHeight(20);buttonVerticalTen.setPrefHeight(20);
+        buttonOverrideMethod.setPrefHeight(20);buttonInsertBefore.setPrefHeight(20);buttonInsertAfter.setPrefHeight(20);buttonOverrideConstructor.setPrefHeight(20);
         buttonVerticalOne.setPrefWidth(195);buttonVerticalTwo.setPrefWidth(195);buttonVerticalThree.setPrefWidth(195);buttonVerticalFour.setPrefWidth(195);
         buttonVerticalFive.setPrefWidth(195);buttonVerticalSix.setPrefWidth(195);buttonVerticalSeven.setPrefWidth(195);buttonVerticalEight.setPrefWidth(195);
-        buttonVerticalNine.setPrefWidth(195);buttonVerticalTen.setPrefWidth(195);
+        buttonOverrideMethod.setPrefWidth(195);buttonInsertBefore.setPrefWidth(195);buttonInsertAfter.setPrefWidth(195);buttonOverrideConstructor.setPrefWidth(195);
         buttonVerticalOne.setText("Add Class");buttonVerticalTwo.setText("Remove Class");
         buttonVerticalThree.setText("Add Method");buttonVerticalFour.setText("Remove Method");
-        buttonVerticalFive.setText("Add Field");buttonVerticalSix.setText("Remove Field");
-        buttonVerticalSeven.setText("Add Constructor");buttonVerticalEight.setText("Remove Constructor");
-        buttonVerticalNine.setText("Button9");buttonVerticalTen.setText("Button10");
+        buttonOverrideMethod.setText("Override Method");buttonInsertBefore.setText("Insert before method body");
+        buttonInsertAfter.setText("Insert after method body");buttonVerticalFive.setText("Add Field");
+        buttonVerticalSix.setText("Remove Field");buttonVerticalSeven.setText("Add Constructor");
+        buttonVerticalEight.setText("Remove Constructor");buttonOverrideConstructor.setText("Override Constructor");
+
         VBox verticalButtonsBox = new VBox();
         verticalButtonsBox.setPrefSize(200, 660);
         verticalButtonsBox.setAlignment(Pos.CENTER);
-        verticalButtonsBox.getChildren().addAll(buttonVerticalOne, buttonVerticalTwo, buttonVerticalThree, buttonVerticalFour, buttonVerticalFive, buttonVerticalSix, buttonVerticalSeven, buttonVerticalEight, buttonVerticalNine, buttonVerticalTen);
+        verticalButtonsBox.getChildren().addAll(buttonVerticalOne, buttonVerticalTwo, buttonVerticalThree, buttonVerticalFour, buttonOverrideMethod, buttonInsertBefore, buttonInsertAfter, buttonVerticalFive, buttonVerticalSix, buttonVerticalSeven, buttonVerticalEight, buttonOverrideConstructor);
 
         VBox restDesignStuff = new VBox();
         restDesignStuff.setPrefSize(600, 660);
@@ -421,6 +426,21 @@ public class JavaFX extends Application
             }
         });
 
+        buttonVerticalFive.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                try {
+                    FieldOperation.addingNewField(chosenClassForRemove);
+                    fieldsView.setItems(fieldList);
+                 //   fieldsView.refresh();
+                } catch (NotFoundException e) {
+                    e.printStackTrace();
+                } catch (CannotCompileException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
         buttonVerticalSix.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -437,6 +457,20 @@ public class JavaFX extends Application
             }
         });
 
+        buttonVerticalSeven.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                try {
+                    ConstructorOperation.addingNewConstructor(chosenClassForRemove);
+                    constructorView.setItems(constructorList);
+                } catch (NotFoundException e) {
+                    e.printStackTrace();
+                } catch (CannotCompileException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
         buttonVerticalEight.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -450,13 +484,6 @@ public class JavaFX extends Application
                 }
                 final ObservableList<String> newConstructorList = FXCollections.observableArrayList(newConstructorsList);
                 constructorView.setItems(newConstructorList);
-            }
-        });
-
-        buttonVerticalTen.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Button 10 has been pressed.");
             }
         });
 
