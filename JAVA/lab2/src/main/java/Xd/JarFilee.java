@@ -5,6 +5,7 @@ import javassist.*;
 
 import java.io.*;
 
+import java.lang.reflect.Array;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Enumeration;
@@ -82,12 +83,7 @@ public class JarFilee {
     }
 
     public static ArrayList<String> onlyMethods(String className) throws NotFoundException, IOException {
-        // jarPath = jarFile.getPath();
-        //JarFile jarFile = new JarFile(jarPath);
-        // System.out.println("jarFIle: " + jarPath);
-        // this.classPool = ClassPool.getDefault();
         classPool = ClassPool.getDefault();
-        // this.classPool.appendClassPath(JavaFX.file.getAbsolutePath());
         classPool.appendClassPath(JavaFX.file.getAbsolutePath());
         ArrayList<CtMethod> methods = new ArrayList<CtMethod>();
         ArrayList<String> methodsFullHeaders = null;
@@ -269,6 +265,22 @@ public class JarFilee {
             }
         }
         return notClassElements;
+    }
+
+    public static void updateMethodsForClass(String className,String removableMethod) throws NotFoundException {
+        CtClass ctExampleClass = classPool.get(className);
+        ctExampleClass.stopPruning(true); //TODO find out what is pruning
+        CtMethod[] classMethods = ctExampleClass.getDeclaredMethods();
+        for(CtMethod ctMethod : classMethods){
+            System.out.println("ctMethod: " + ctMethod.getName());
+            String ctMethodForRemove = ctMethod.getName();
+            System.out.println("ctMethodForRemove: " + ctMethodForRemove);
+            if(removableMethod.contains(ctMethodForRemove)) {
+                ctExampleClass.removeMethod(ctMethod);
+                System.out.println("ctMethod2: " + ctMethod);
+            }
+        }
+        System.out.println("Methods after removing: " + classMethods.toString());
     }
 }
 

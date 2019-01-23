@@ -20,22 +20,22 @@
     <session id="1145666878">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="26" />
+          <entry key="project.closed" value="27" />
           <entry key="project.open.time.0" value="5" />
           <entry key="project.open.time.1" value="7" />
           <entry key="project.open.time.10" value="3" />
-          <entry key="project.open.time.11" value="2" />
+          <entry key="project.open.time.11" value="3" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.8" value="2" />
           <entry key="project.open.time.9" value="3" />
-          <entry key="project.opened" value="26" />
+          <entry key="project.opened" value="27" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="3" />
+          <entry key="class" value="7" />
           <entry key="fxml" value="1" />
           <entry key="java" value="23" />
           <entry key="png" value="1" />
@@ -45,7 +45,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="3" />
+          <entry key="CLASS" value="7" />
           <entry key="Image" value="1" />
           <entry key="JAVA" value="23" />
           <entry key="PLAIN_TEXT" value="5" />
@@ -55,13 +55,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="10" />
-          <entry key="java" value="12818" />
+          <entry key="java" value="13432" />
           <entry key="xml" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="12818" />
+          <entry key="JAVA" value="13432" />
           <entry key="PLAIN_TEXT" value="10" />
           <entry key="XML" value="19" />
         </counts>
@@ -73,15 +73,18 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Xd/JarFilee.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="94" column="19" selection-start-line="94" selection-start-column="12" selection-end-line="94" selection-end-column="19" />
+            <state relative-caret-position="153">
+              <caret line="272" column="23" lean-forward="true" selection-start-line="272" selection-start-column="23" selection-end-line="272" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#makeMethodsHeaders#0;class#JarFilee#0" />
                 <element signature="method#makeAccessModifier#0;class#JarFilee#0" />
                 <element signature="method#getConstructorsFromClass#0;class#JarFilee#0" />
                 <element signature="method#makeConstructorsHeaders#0;class#JarFilee#0" />
+                <element signature="method#getFieldsFromClass#0;class#JarFilee#0" />
+                <element signature="method#makeFieldsHeaders#0;class#JarFilee#0" />
                 <element signature="method#showPackage#0;class#JarFilee#0" />
+                <element signature="method#getAllElements#0;class#JarFilee#0" />
+                <element signature="method#getNotClassElements#0;class#JarFilee#0" />
               </folding>
             </state>
           </provider>
@@ -90,15 +93,15 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Xd/JavaFX.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="379" column="49" selection-start-line="379" selection-start-column="49" selection-end-line="379" selection-end-column="49" />
+            <state relative-caret-position="150">
+              <caret line="12" column="37" lean-forward="true" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#5585#6922#0" expanded="true" />
-                <element signature="e#6921#6922#0" expanded="true" />
-                <element signature="e#15605#16387#0" expanded="true" />
-                <element signature="e#16386#16387#0" expanded="true" />
+                <element signature="e#4940#5571#0" expanded="true" />
+                <element signature="e#5570#5571#0" expanded="true" />
+                <element signature="e#16430#17094#0" expanded="true" />
                 <element signature="e#17093#17094#0" expanded="true" />
+                <element signature="e#18194#18392#0" expanded="true" />
+                <element signature="e#18391#18392#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -108,7 +111,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/Xd/ClassOperation.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+              <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -116,8 +119,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Xd/MethodOperation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="57" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="57" />
+            <state relative-caret-position="221">
+              <caret line="14" column="58" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -125,7 +131,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Xd/FileChooserr.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
+            <state relative-caret-position="442">
               <caret line="33" column="18" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -137,8 +143,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Xd/FileSaver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="33" column="46" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="46" />
+            <state relative-caret-position="370">
+              <caret line="26" column="79" selection-start-line="26" selection-start-column="69" selection-end-line="26" selection-end-column="79" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -162,6 +168,7 @@
       <find>setConfigurationForGridPane</find>
       <find>getMenuBarWithVBox</find>
       <find>prepareMenu</find>
+      <find>metody</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -180,10 +187,10 @@
         <option value="$PROJECT_DIR$/src/main/java/Xd/ListVieww.java" />
         <option value="$PROJECT_DIR$/src/main/java/Xd/FileChooserr.java" />
         <option value="$PROJECT_DIR$/src/main/java/Xd/ClassOperation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Xd/JavaFX.java" />
         <option value="$PROJECT_DIR$/src/main/java/Xd/FileSaver.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Xd/JarFilee.java" />
         <option value="$PROJECT_DIR$/src/main/java/Xd/MethodOperation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Xd/JarFilee.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Xd/JavaFX.java" />
       </list>
     </option>
   </component>
@@ -194,10 +201,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="1939" />
+    <option name="height" value="1049" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -319,16 +326,17 @@
       <workItem from="1548092582772" duration="10438000" />
       <workItem from="1548172878748" duration="13786000" />
       <workItem from="1548189932633" duration="3600000" />
+      <workItem from="1548259474792" duration="2849000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115282000" />
+    <option name="totallyTimeSpent" value="118131000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1852349" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18791947" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -337,7 +345,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.35886526" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.37730497" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -491,26 +499,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/7zO4500C122/Game.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1020">
-          <caret line="46" column="57" selection-start-line="46" selection-start-column="46" selection-end-line="46" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/7zO4500C122/Game.class" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/7zOCD4D8A47/Invader.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#1889#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Xd/FileChooserr.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
+        <state relative-caret-position="442">
           <caret line="33" column="18" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -520,25 +519,68 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Xd/FileSaver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="33" column="46" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="46" />
+        <state relative-caret-position="370">
+          <caret line="26" column="79" selection-start-line="26" selection-start-column="69" selection-end-line="26" selection-end-column="79" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Xd/JarFilee.java">
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa2620.16711/Invader.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="94" column="19" selection-start-line="94" selection-start-column="12" selection-end-line="94" selection-end-column="19" />
+        <state relative-caret-position="126">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="31" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#1889#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Xd/MethodOperation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="14" column="58" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#makeMethodsHeaders#0;class#JarFilee#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa1112.48526/Martian.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="22" column="31" selection-end-line="52" />
+          <folding>
+            <element signature="e#0#1440#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa8112.3099/Martian.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="44" column="29" lean-forward="true" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#1527#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Xd/JarFilee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="272" column="23" lean-forward="true" selection-start-line="272" selection-start-column="23" selection-end-line="272" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#makeAccessModifier#0;class#JarFilee#0" />
             <element signature="method#getConstructorsFromClass#0;class#JarFilee#0" />
             <element signature="method#makeConstructorsHeaders#0;class#JarFilee#0" />
+            <element signature="method#getFieldsFromClass#0;class#JarFilee#0" />
+            <element signature="method#makeFieldsHeaders#0;class#JarFilee#0" />
             <element signature="method#showPackage#0;class#JarFilee#0" />
+            <element signature="method#getAllElements#0;class#JarFilee#0" />
+            <element signature="method#getNotClassElements#0;class#JarFilee#0" />
           </folding>
         </state>
       </provider>
@@ -546,28 +588,31 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/Xd/ClassOperation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Xd/MethodOperation.java">
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa1804.25695/Martian.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="57" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="57" />
+        <state relative-caret-position="109">
+          <caret line="27" column="21" lean-forward="true" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#1440#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Xd/JavaFX.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="379" column="49" selection-start-line="379" selection-start-column="49" selection-end-line="379" selection-end-column="49" />
+        <state relative-caret-position="150">
+          <caret line="12" column="37" lean-forward="true" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5585#6922#0" expanded="true" />
-            <element signature="e#6921#6922#0" expanded="true" />
-            <element signature="e#15605#16387#0" expanded="true" />
-            <element signature="e#16386#16387#0" expanded="true" />
+            <element signature="e#4940#5571#0" expanded="true" />
+            <element signature="e#5570#5571#0" expanded="true" />
+            <element signature="e#16430#17094#0" expanded="true" />
             <element signature="e#17093#17094#0" expanded="true" />
+            <element signature="e#18194#18392#0" expanded="true" />
+            <element signature="e#18391#18392#0" expanded="true" />
           </folding>
         </state>
       </provider>
