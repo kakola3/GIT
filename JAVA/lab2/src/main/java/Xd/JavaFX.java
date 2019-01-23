@@ -139,6 +139,19 @@ public class JavaFX extends Application
             }
         });
 
+        button3.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("Saving the jar...");
+                fileChooserToSave.getExtensionFilters().add(new FileChooser.ExtensionFilter("JAR Files", "*.jar"));
+                File fileToSave = fileChooserToSave.showSaveDialog(thirdStage);
+                List<String> allClasses = JarFilee.allFiles;
+                if (FileSaver.saveJar(fileToSave, allClasses)) {
+                    showAlert(Alert.AlertType.INFORMATION, "Success", "Successfully saved a jar", "");
+                }
+            }
+        });
+
 //        button4.setOnAction(new EventHandler<ActionEvent>() {
 //            @Override
 //            public void handle(ActionEvent event) {
@@ -383,6 +396,13 @@ public class JavaFX extends Application
                 ArrayList<String> newMethodsList = MethodOperation.removeChosenMethod(chosenMethodForRemove);
                 methodsListToSave = newMethodsList;
                 System.out.println("methodList: " + methodsListToSave);
+                System.out.println("Updating methods for class...");
+                try {
+                    System.out.println("choosenMethodForRemove: " + chosenMethodForRemove);
+                    JarFilee.updateMethodsForClass(chosenClassForRemove, chosenMethodForRemove);
+                } catch (NotFoundException e) {
+                    e.printStackTrace();
+                }
                 final ObservableList<String> newMethodList = FXCollections.observableArrayList(newMethodsList);
                 methodsView.setItems(newMethodList);
                // methodsView.refresh();
@@ -393,13 +413,7 @@ public class JavaFX extends Application
         buttonVerticalTen.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Saving the jar...");
-                fileChooserToSave.getExtensionFilters().add(new FileChooser.ExtensionFilter("JAR Files", "*.jar"));
-                File fileToSave = fileChooserToSave.showSaveDialog(thirdStage);
-                List<String> allClasses = JarFilee.allFiles;
-                if (FileSaver.saveJar(fileToSave, allClasses)) {
-                    showAlert(Alert.AlertType.INFORMATION, "Success", "Successfully saved a jar", "");
-                }
+                System.out.println("Button 10 has been pressed.");
             }
         });
 
