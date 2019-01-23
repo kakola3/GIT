@@ -35,7 +35,7 @@ public class FieldOperation
         Optional<String> result = dialog.showAndWait();
         result.ifPresent(fieldText -> {
             try {
-                ctClass.addField(CtField.make(fieldText, ctClass));
+                ctClass.addField(CtField.make(fieldText, ctClass)); // result.get().trim()
                 System.out.println("fieldText: " + fieldText);
                 temporaryOnlyFieldArray.add(fieldText);
                 System.out.println("temporaryOnlyFieldArray: " + temporaryOnlyFieldArray);

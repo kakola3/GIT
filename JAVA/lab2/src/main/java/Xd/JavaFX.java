@@ -409,6 +409,20 @@ public class JavaFX extends Application
             }
         });
 
+        buttonVerticalThree.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                try {
+                    MethodOperation.addingNewMethod(chosenClassForRemove);
+                } catch (NotFoundException e) {
+                    e.printStackTrace();
+                } catch (CannotCompileException e) {
+                    e.printStackTrace();
+                }
+                methodsView.setItems(methodList);
+            }
+        });
+
         buttonVerticalFour.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -432,7 +446,6 @@ public class JavaFX extends Application
                 try {
                     FieldOperation.addingNewField(chosenClassForRemove);
                     fieldsView.setItems(fieldList);
-                 //   fieldsView.refresh();
                 } catch (NotFoundException e) {
                     e.printStackTrace();
                 } catch (CannotCompileException e) {
