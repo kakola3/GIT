@@ -32,7 +32,7 @@ public class ConstructorOperation
         result.ifPresent(constructorText -> {
             try {
                 CtConstructor cons = new CtConstructor(null, ctClass);
-                cons.setBody(constructorText);
+                cons.setBody(constructorText);  // result.get().trim()
                 ctClass.addConstructor(cons);
                 System.out.println("constructorText: " + constructorText);
                 temporaryOnlyConstructorArray.add(constructorText);

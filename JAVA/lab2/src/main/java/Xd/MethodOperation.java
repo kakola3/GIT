@@ -1,6 +1,10 @@
 package Xd;
 
+import javafx.scene.control.TextInputDialog;
+import javassist.*;
+
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class MethodOperation
 {
@@ -14,5 +18,28 @@ public class MethodOperation
             JavaFX.methodsList = temporaryOnlyMethodArray;
         }
         return temporaryOnlyMethodArray;
+    }
+
+    public static void addingNewMethod(String classToAdd) throws NotFoundException, CannotCompileException {
+        ArrayList<String> temporaryOnlyMethodArray  = JavaFX.methodsList;
+        CtClass ctClass = JarFilee.classPool.get(classToAdd);
+        System.out.println("JarFilee.classPool.get(classToAdd): " + JarFilee.classPool.get(classToAdd));
+        TextInputDialog dialog = new TextInputDialog("public int newMethod(){}");
+        dialog.setTitle("New Method");
+        dialog.setHeaderText("Write some code as method declaration");
+        dialog.setContentText("Method:");
+        Optional<String> result = dialog.showAndWait();
+        result.ifPresent(methodText -> {
+            try {
+                ctClass.addMethod(CtMethod.make(result.get().trim(), ctClass));
+                System.out.println("methodText: " + methodText);
+                temporaryOnlyMethodArray.add(methodText);
+                System.out.println("temporaryOnlyMethodArray: " + temporaryOnlyMethodArray);
+                JavaFX.methodsList = temporaryOnlyMethodArray;
+                System.out.println("temporaryOnlyMethodArray: " + temporaryOnlyMethodArray);
+            } catch (CannotCompileException e) {
+                e.printStackTrace();
+            }
+        });
     }
 }
