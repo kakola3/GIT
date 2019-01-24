@@ -48,7 +48,7 @@ public class MethodOperation
         CtMethod[] ctMethods = ctClass.getDeclaredMethods();
         for(CtMethod ctMethod: ctMethods) {
             if(methodToUpdate.contains(ctMethod.getName())){
-                TextInputDialog dialog = new TextInputDialog("public int updatedMethod(){}");
+                TextInputDialog dialog = new TextInputDialog("System.out.println(\"Override the method\");");
                 dialog.setTitle("Updated Method");
                 dialog.setHeaderText("Write some code as method update");
                 dialog.setContentText("Method:");
@@ -63,7 +63,49 @@ public class MethodOperation
                 });
             }
         }
+    }
 
+    public static void addBeforeMethodBody(String classToUpdate, String methodToUpdate) throws NotFoundException {
+        CtClass ctClass = JarFilee.classPool.get(classToUpdate);
+        CtMethod[] ctMethods = ctClass.getDeclaredMethods();
+        for(CtMethod ctMethod: ctMethods) {
+            if(methodToUpdate.contains(ctMethod.getName())){
+                TextInputDialog dialog = new TextInputDialog("System.out.println(\"Add before the method\");");
+                dialog.setTitle("AddBefore Method");
+                dialog.setHeaderText("Write some code as method update");
+                dialog.setContentText("Method:");
+                Optional<String> result = dialog.showAndWait();
+                result.ifPresent(methodText -> {
+                    try {
+                        ctMethod.insertBefore(methodText);
+                        System.out.println("Inserted part of method body: " + methodText);
+                    } catch (CannotCompileException e) {
+                        e.printStackTrace();
+                    }
+                });
+            }
+        }
+    }
 
+    public static void addAfterMethodBody(String classToUpdate, String methodToUpdate) throws NotFoundException {
+        CtClass ctClass = JarFilee.classPool.get(classToUpdate);
+        CtMethod[] ctMethods = ctClass.getDeclaredMethods();
+        for(CtMethod ctMethod: ctMethods) {
+            if(methodToUpdate.contains(ctMethod.getName())){
+                TextInputDialog dialog = new TextInputDialog("System.out.println(\"Add after the method\");");
+                dialog.setTitle("AddAfter Method");
+                dialog.setHeaderText("Write some code as method update");
+                dialog.setContentText("Method:");
+                Optional<String> result = dialog.showAndWait();
+                result.ifPresent(methodText -> {
+                    try {
+                        ctMethod.insertAfter(methodText);
+                        System.out.println("Inserted part of method body: " + methodText);
+                    } catch (CannotCompileException e) {
+                        e.printStackTrace();
+                    }
+                });
+            }
+        }
     }
 }

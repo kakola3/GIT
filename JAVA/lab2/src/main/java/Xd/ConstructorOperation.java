@@ -44,4 +44,28 @@ public class ConstructorOperation
             }
         });
     }
+
+    public static void overrideConstructor(String classToUpdate, String constructorToUpdate) throws NotFoundException {
+        CtClass ctClass = JarFilee.classPool.get(classToUpdate);
+        CtConstructor[] ctConstructors = ctClass.getDeclaredConstructors();
+        for(CtConstructor ctConstructor: ctConstructors) {
+            if(constructorToUpdate.contains(ctConstructor.getName())){
+                TextInputDialog dialog = new TextInputDialog("System.out.println(\"Override the constructor\");");
+                dialog.setTitle("Updated Constructor");
+                dialog.setHeaderText("Write some code as constructor update");
+                dialog.setContentText("Constructor:");
+                Optional<String> result = dialog.showAndWait();
+                result.ifPresent(constructorText -> {
+                    try {
+                        ctConstructor.setBody(constructorText);
+                        System.out.println("New constructor body: " + constructorText);
+                    } catch (CannotCompileException e) {
+                        e.printStackTrace();
+                    }
+                });
+            }
+        }
+
+
+    }
 }
