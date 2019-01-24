@@ -42,4 +42,28 @@ public class MethodOperation
             }
         });
     }
+
+    public static void overrideMethod(String classToUpdate, String methodToUpdate) throws NotFoundException {
+        CtClass ctClass = JarFilee.classPool.get(classToUpdate);
+        CtMethod[] ctMethods = ctClass.getDeclaredMethods();
+        for(CtMethod ctMethod: ctMethods) {
+            if(methodToUpdate.contains(ctMethod.getName())){
+                TextInputDialog dialog = new TextInputDialog("public int updatedMethod(){}");
+                dialog.setTitle("Updated Method");
+                dialog.setHeaderText("Write some code as method update");
+                dialog.setContentText("Method:");
+                Optional<String> result = dialog.showAndWait();
+                result.ifPresent(methodText -> {
+                    try {
+                        ctMethod.setBody(methodText);
+                        System.out.println("New method body: " + methodText);
+                    } catch (CannotCompileException e) {
+                        e.printStackTrace();
+                    }
+                });
+            }
+        }
+
+
+    }
 }

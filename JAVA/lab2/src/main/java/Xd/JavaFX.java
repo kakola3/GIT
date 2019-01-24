@@ -440,6 +440,18 @@ public class JavaFX extends Application
             }
         });
 
+        buttonOverrideMethod.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                try {
+                    MethodOperation.overrideMethod(chosenClassForRemove,chosenMethodForRemove);
+                    methodsView.setItems(methodList);
+                } catch (NotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
         buttonVerticalFive.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
