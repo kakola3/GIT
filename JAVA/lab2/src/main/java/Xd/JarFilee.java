@@ -8,11 +8,13 @@ import java.io.*;
 import java.lang.reflect.Array;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Enumeration;
 import java.util.jar.JarFile;
 import java.util.jar.Manifest;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
+import java.awt.Graphics;
 
 public class JarFilee {
     //public static File jarFile;
@@ -89,12 +91,18 @@ public class JarFilee {
         ArrayList<String> methodsFullHeaders = null;
         try {
             CtClass ctExampleClass = classPool.get(className);
+            System.out.println("Pobrana klasa: " + ctExampleClass.getName());
             ctExampleClass.stopPruning(true);
             CtMethod[] classMethods = ctExampleClass.getDeclaredMethods();
-            for (CtMethod method : classMethods) {
-                methods.add(method);
+            System.out.println("classMethods: " + ctExampleClass.getDeclaredMethods());
+            for(int i=0; i<classMethods.length; i++){
+                methods.add(classMethods[i]);
+                System.out.println("classMethods[i]: " + classMethods[i]);
             }
+          // Collections.addAll(methods, classMethods);
+            System.out.println("Collections: " + methods);
             methodsFullHeaders = makeMethodsHeaders(methods);
+
         } catch (NotFoundException e) {
             System.out.println(e);
         }
