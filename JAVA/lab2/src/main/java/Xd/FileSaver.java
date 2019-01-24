@@ -25,8 +25,6 @@ public class FileSaver
     }
 
     public static boolean saveJar(File destinationFile, List<String> allClasses) {
-        //TODO save also files different than *.class files -- take them from JarReader
-        // TODO check saving a jar
         try {
             OutputStream outputStream = new FileOutputStream(destinationFile);
             JarOutputStream jarOutputStream = new JarOutputStream(outputStream, JarFilee.jarFileJAR.getManifest());

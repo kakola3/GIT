@@ -89,7 +89,7 @@ public class JarFilee {
         ArrayList<String> methodsFullHeaders = null;
         try {
             CtClass ctExampleClass = classPool.get(className);
-            ctExampleClass.stopPruning(true); //TODO find out what is pruning
+            ctExampleClass.stopPruning(true);
             CtMethod[] classMethods = ctExampleClass.getDeclaredMethods();
             for (CtMethod method : classMethods) {
                 methods.add(method);
@@ -150,7 +150,7 @@ public class JarFilee {
         ArrayList<CtConstructor> constructors = new ArrayList<CtConstructor>();
         try {
             CtClass ctExampleClass = classPool.get(chosenClass);
-            ctExampleClass.stopPruning(true); //TODO find out what is pruning
+            ctExampleClass.stopPruning(true);
             CtConstructor[] classConstructors = ctExampleClass.getDeclaredConstructors();
             for (CtConstructor constructor : classConstructors) {
                 constructors.add(constructor);
@@ -193,7 +193,7 @@ public class JarFilee {
         ArrayList<String> fieldsFullHeaders = null;
         try {
             CtClass ctExampleClass = classPool.get(chosenClass);
-            ctExampleClass.stopPruning(true); //TODO find out what is pruning
+            ctExampleClass.stopPruning(true);
             CtField[] classFields = ctExampleClass.getDeclaredFields();
             for (CtField field : classFields) {
                 fields.add(field);
@@ -269,7 +269,7 @@ public class JarFilee {
 
     public static void updateMethodsForClass(String className, String removableMethod) throws NotFoundException {
         CtClass ctExampleClass = classPool.get(className);
-        ctExampleClass.stopPruning(true); //TODO find out what is pruning
+        ctExampleClass.stopPruning(true);
         CtMethod[] classMethods = ctExampleClass.getDeclaredMethods();
         for(CtMethod ctMethod : classMethods){
             System.out.println("ctMethod: " + ctMethod.getName());
@@ -285,7 +285,7 @@ public class JarFilee {
 
     public static void updateFieldsForClass(String className, String removableField) throws NotFoundException {
         CtClass ctExampleClass = classPool.get(className);
-        ctExampleClass.stopPruning(true); //TODO find out what is pruning
+        ctExampleClass.stopPruning(true);
         CtField[] classFields = ctExampleClass.getDeclaredFields();
         for(CtField ctField : classFields){
             System.out.println("ctField: " + ctField.getName());
@@ -301,7 +301,7 @@ public class JarFilee {
 
     public static void updateConstructorsForClass(String className, String removableConstructor) throws NotFoundException {
         CtClass ctExampleClass = classPool.get(className);
-        ctExampleClass.stopPruning(true); //TODO find out what is pruning
+        ctExampleClass.stopPruning(true);
         CtConstructor[] classConstructors = ctExampleClass.getDeclaredConstructors();
         for(CtConstructor ctConstructor : classConstructors){
             System.out.println("ctConstructor: " + ctConstructor.getName());

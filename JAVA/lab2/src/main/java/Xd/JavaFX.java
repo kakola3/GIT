@@ -39,6 +39,7 @@ public class JavaFX extends Application
     Stage secondStage = new Stage();
     public static Stage thirdStage = new Stage();
 
+    public static String chosenPackageForRemove;
     String chosenClassForRemove;
     String chosenMethodForRemove;
     String chosenFieldForRemove;
@@ -272,6 +273,13 @@ public class JavaFX extends Application
         packageView.setItems(packageList);
         System.out.println("package: " + packageList);
         packageView.setPrefSize(600, 160);
+        packageView.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                String string = (String) packageView.getSelectionModel().getSelectedItem();
+                chosenPackageForRemove = string;
+            }
+        });
 
             methodsView.setItems(methodList);
             System.out.println("metody: " + methodList);
@@ -389,6 +397,14 @@ public class JavaFX extends Application
         thirdStage.setTitle("UnJar");
         thirdStage.setResizable(false);
         thirdStage.show();
+//
+//        buttonVerticalOne.setOnAction(new EventHandler<ActionEvent>() {
+//            @Override
+//            public void handle(ActionEvent event) {
+//                ClassOperation.addNewClass();
+//                classesView.setItems(classesList);
+//            }
+//        });
 
         buttonVerticalTwo.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -445,6 +461,30 @@ public class JavaFX extends Application
             public void handle(ActionEvent event) {
                 try {
                     MethodOperation.overrideMethod(chosenClassForRemove,chosenMethodForRemove);
+                    methodsView.setItems(methodList);
+                } catch (NotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        buttonInsertBefore.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                try {
+                    MethodOperation.addBeforeMethodBody(chosenClassForRemove, chosenMethodForRemove);
+                    methodsView.setItems(methodList);
+                } catch (NotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        buttonInsertAfter.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                try {
+                    MethodOperation.addAfterMethodBody(chosenClassForRemove, chosenMethodForRemove);
                     methodsView.setItems(methodList);
                 } catch (NotFoundException e) {
                     e.printStackTrace();
@@ -509,6 +549,18 @@ public class JavaFX extends Application
                 }
                 final ObservableList<String> newConstructorList = FXCollections.observableArrayList(newConstructorsList);
                 constructorView.setItems(newConstructorList);
+            }
+        });
+
+        buttonOverrideConstructor.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                try {
+                    ConstructorOperation.overrideConstructor(chosenClassForRemove, chosenConstructorForRemove);
+                    constructorView.setItems(constructorList);
+                } catch (NotFoundException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
