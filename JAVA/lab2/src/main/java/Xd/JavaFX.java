@@ -106,6 +106,9 @@ public class JavaFX extends Application
         //button4.setPrefHeight(40);
         //button5.setPrefHeight(40);
 
+        button2.setDisable(true);
+        button3.setDisable(true);
+
         buttons.addRow(0, button1, button2, button3);//, button4);//, button5);
         buttons.setAlignment(Pos.BOTTOM_LEFT);
 
@@ -116,6 +119,8 @@ public class JavaFX extends Application
                     file = fileChooserr.PickMe();
                     filePath = file.getAbsolutePath();
                     System.out.println("enterButtonsWithProperties() filePath: " + filePath);
+                    button2.setDisable(false);
+                    button1.setDisable(true);
                     secondStage();
 
                     System.out.println("Action after click Button1 end"); // debug
@@ -133,6 +138,8 @@ public class JavaFX extends Application
                 try {
                     jarFile.openJar(file);
                     secondStage();
+                    button2.setDisable(true);
+                    button3.setDisable(false);
                 } catch (IOException e) {
                     e.printStackTrace();
                 } catch (NotFoundException e) {
@@ -240,7 +247,6 @@ public class JavaFX extends Application
 
         hBoxWithoutButtons.getChildren().add(jarOverview);
         hBoxWithoutButtons.getChildren().add(restDesignStuff);
-
         VBox vBox = new VBox();
         vBox.getChildren().add(hBoxWithoutButtons);
         vBox.getChildren().add(buttons);
