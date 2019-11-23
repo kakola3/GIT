@@ -18,7 +18,6 @@ public class Main {
 
         // create an objective function for a linear optimization problem.
         LinearObjectiveFunction linearObjectiveFunction = createNewLinearObjectiveFunction(coefficients);
-        System.out.println("linearObjectiveFunction: " + linearObjectiveFunction.getCoefficients());
 
         // set restrictions for our linear equation
         System.out.print("How many restrictions: ");
@@ -40,7 +39,6 @@ public class Main {
     public static double[] createDynamicDoubleArrayForParameters(int arraySize, int versionOfFunction){
         double[] dynamicDoubleArrayForParameters = new double[arraySize];
         Scanner scan = new Scanner(System.in);
-        System.out.println("dynamicDoubleArrayForParameters is empty: |" + Arrays.toString(dynamicDoubleArrayForParameters) + "|");
         for (int i = 0; i < arraySize; i++) {
             System.out.print(versionOfFunction == 1 ?
                     "Please enter value of x" + (i+1) + " in linear objective function: " :
@@ -48,7 +46,6 @@ public class Main {
             Double doubleValue = scan.nextDouble();
             dynamicDoubleArrayForParameters[i] = doubleValue;
         }
-        System.out.println("dynamicDoubleArrayForParameters is full: |" + Arrays.toString(dynamicDoubleArrayForParameters) + "|");
         return dynamicDoubleArrayForParameters;
     }
 
