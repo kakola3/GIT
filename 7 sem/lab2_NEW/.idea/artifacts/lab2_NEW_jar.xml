@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="lab2_NEW:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/lab2_NEW_jar</output-path>
+    <root id="archive" name="lab2_NEW.jar">
+      <element id="module-output" name="lab2_NEW" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../commons-math3-3.6.1.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

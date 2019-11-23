@@ -10,25 +10,26 @@ public class Main {
         Scanner scan = new Scanner(System.in);
 
         // enter how long is our linear equation
-        System.out.print("How many criteria: ");
+        System.out.print("Ile kryteriów: ");
         int numberOfCriteria = scan.nextInt();
 
         // enter x arguments values
         double[] coefficients = createDynamicDoubleArrayForParameters(numberOfCriteria, 1);
+        StringBuilder stringBuilderForEquation = drawScreen(coefficients);
 
         // create an objective function for a linear optimization problem.
         LinearObjectiveFunction linearObjectiveFunction = createNewLinearObjectiveFunction(coefficients);
 
         // set restrictions for our linear equation
-        System.out.print("How many restrictions: ");
+        System.out.print("Ilość ograniczeń: ");
         int numberOfRestrictions = scan.nextInt();
-        ArrayList<LinearConstraint> restrictions = setRestrictions(numberOfCriteria, numberOfRestrictions);
+        ArrayList<LinearConstraint> restrictions = setRestrictions(numberOfCriteria, numberOfRestrictions, stringBuilderForEquation);
 
         // creating linear constraint set
         LinearConstraintSet linearConstraintSet = createNewLinearConstraintSet(restrictions);
 
         // create solution of our linear equation
-        System.out.print("Standard Min or Standard Max form (enter max or min): ");
+        System.out.print("Funkcja minimalizująca czy maksymalizująca? Wpisz min lub max: ");
         String form = scan.next();
         PointValuePair equationSolution = getEquationSolution(linearObjectiveFunction, linearConstraintSet, form);
 
@@ -41,8 +42,8 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         for (int i = 0; i < arraySize; i++) {
             System.out.print(versionOfFunction == 1 ?
-                    "Please enter value of x" + (i+1) + " in linear objective function: " :
-                    "Please enter value of x" + (i+1) + " in restriction: ");
+                    "Wprowadź wartość x" + (i+1) + " w równaniu liniowym: " :
+                    "Wprowadź wartość x" + (i+1) + " w tym ograniczeniu: ");
             Double doubleValue = scan.nextDouble();
             dynamicDoubleArrayForParameters[i] = doubleValue;
         }
@@ -53,14 +54,23 @@ public class Main {
         return new LinearObjectiveFunction(coefficientsArray, 0);
     }
 
-    public static ArrayList<LinearConstraint> setRestrictions(int numberOfCriteria, int numberOfRestrictions){
+    public static LinearConstraint setRestriction(int numberOfCriteria){
+        Relationship relationship = setRestrictionRelationship();
+        Double constantTerm = setConstantTerm();
+        double[] restrictionArrayForCoefficients = createDynamicDoubleArrayForParameters(numberOfCriteria, 2);
+
+        return new LinearConstraint(restrictionArrayForCoefficients, relationship, constantTerm);
+    }
+
+    public static ArrayList<LinearConstraint> setRestrictions(int numberOfCriteria, int numberOfRestrictions, StringBuilder stringBuilderForEquation){
         ArrayList<LinearConstraint> restrictionsArray = new ArrayList<>();
 
         for (int i = 0; i < numberOfRestrictions; i++) {
-            Relationship relationship = setRestrictionRelationship();
-            Double constantTerm = setConstantTerm();
-            double[] restrictionArrayForCoefficients = createDynamicDoubleArrayForParameters(numberOfCriteria, 2);
-            restrictionsArray.add(new LinearConstraint(restrictionArrayForCoefficients, relationship, constantTerm));
+            LinearConstraint linearConstraint = setRestriction(numberOfCriteria);
+            restrictionsArray.add(linearConstraint);
+            System.out.print("--------------------------------------------------------\n");
+            System.out.print(stringBuilderForEquation);
+            drawRestriction(restrictionsArray, numberOfCriteria);
         }
 
         return restrictionsArray;
@@ -68,14 +78,14 @@ public class Main {
 
     public static Relationship setRestrictionRelationship(){
         Scanner scan = new Scanner(System.in);
-        System.out.print("Please enter restriction sign like <= or = or >=");
+        System.out.println("Wprowadź znak ograniczenia <= lub = lub >=");
         String restriction = scan.next();
         return (restriction.equals("<=")) ? Relationship.LEQ : (restriction.equals(">=") ? Relationship.GEQ : Relationship.EQ);
     }
 
     public static double setConstantTerm(){
         Scanner scan = new Scanner(System.in);
-        System.out.print("Please enter constant term for this restriction");
+        System.out.println("Wprowadź wartość stałej w tym ograniczeniu");
         double constantTerm = scan.nextDouble();
 
         return constantTerm;
@@ -103,5 +113,37 @@ public class Main {
         }
         System.out.println("+++++++++++++++");
         System.out.println("Solution value: " + equationSolution.getValue());
+    }
+
+    public static StringBuilder drawScreen(double[] coefficients){
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < coefficients.length; i++) {
+            if(i < (coefficients.length-1)){
+                System.out.print(coefficients[i] + "x" + (i+1) + " + ");
+                stringBuilder.append(coefficients[i] + "x" + (i+1) + " + ");
+            }
+            else{
+                System.out.print(coefficients[i] + "x" + (i+1) + "\n");
+                stringBuilder.append(coefficients[i] + "x" + (i+1) + "\n");
+            }
+        }
+        return stringBuilder;
+    }
+
+    public static void drawRestriction(ArrayList<LinearConstraint> restrictions, int numberOfCriteria){
+        System.out.print("--------------------------------------------------------\n");
+        for (LinearConstraint restriction :
+                restrictions) {
+            for (int i = 0; i < numberOfCriteria; i++) {
+                if(i < (numberOfCriteria-1)){
+                    System.out.print(restriction.getCoefficients().getEntry(i) + "x" + (i+1) + " + ");
+                }
+                else{
+                    System.out.print(restriction.getCoefficients().getEntry(i) + "x" + (i+1) + " " +
+                            restriction.getRelationship() + " " + restriction.getValue() + "\n");
+                }
+            }
+        }
+        System.out.print("--------------------------------------------------------\n");
     }
 }
